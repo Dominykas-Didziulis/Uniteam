@@ -57,7 +57,7 @@
                     <div class="form-group">
                         <label for="password">Slaptažodis</label>
                         <input type="password" class="form-control" 
-                        name="password" value="{{old('password')}}">
+                        name="password" value="">
                         <span class="text-danger">@error('password') {{$message}} @enderror</span>
                     </div>
                     <div class="form-group">

@@ -5,11 +5,12 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Hash;
+use Session;
 
 class CustomAuthController extends Controller
 {
     public function login(){
-        return view("auth.login1");
+        return view("auth.login");
     }
 
     public function registration(){
@@ -34,6 +35,28 @@ class CustomAuthController extends Controller
             return back()->with('success', 'Naujas narys užregistruotas sėkmingai');
         }else{
             return back()->with('fail', 'Registracija neįvykdyta');
+        }
+    }
+    public function loginUser(Request $request){
+        $request->validate([
+            'nickname'=>'required',
+            'password'=>'required|min:10|max:30'
+        ]);
+        $user = User::where('nickname','=',$request->nickname)->first();
+        if($user)
+        {
+            if(Hash::check($request->password,$user->password)){
+                $request->session()->put('loginId',$user->id);
+                return redirect('about');
+            }
+            else
+            {
+                return back()->with('fail','Neteisingas slaptažodis.');
+            }
+        }
+        else
+        {
+            return back()->with('fail','Šis naudotojo vardas nėra registruotas.');
         }
     }
 }
