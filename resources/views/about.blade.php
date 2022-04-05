@@ -13,7 +13,12 @@
         <a class="Link" href="">PAGALBA</a>
         <a class="Link" href="about">APIE MUS</a>
         <a class="Dash" href="">|</a>
+        @guest
         <a class="Link" href="prisijungti"><strong><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;"> PRISIJUNGTI</strong></a>
+        @endguest
+        @auth 
+        <a class="Link" href="atsijungti"><strong><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;"> Atsijungti</strong></a>
+        @endauth
     </div>
 
     <div class="Header">
