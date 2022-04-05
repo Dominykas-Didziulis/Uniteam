@@ -1,13 +1,12 @@
-{{-- Neprisijungusio naudotojo headeris --}}
+{{-- Administratoriaus headeris --}}
 <!DOCTYPE html>
-<html>
-
+<html >
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UNITEAM</title>
-    <link rel="stylesheet" href="{{ asset('css/header.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admheader.css') }}">
    
 </head>
 <body>
@@ -18,13 +17,8 @@
         <a class="Link" href="">PAGALBA</a>
         <a class="Link" href="about">APIE MUS</a>
         <a class="Dash" href="">|</a>
-        @auth
-        <a class="Link" href="atsijungti"><strong><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;"> ATSIJUNGTI</strong></a>
-        @endauth
-        
-        @guest 
-        <a class="Link" href="prisijungti"><strong><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;"> PRISIJUNGTI</strong></a>
-        @endguest
+        <a class="Link" href="about">Narių sąrašas</a>
+        <a class="Link" href="atsijungti"><strong><img src="Images/exit.png" alt="Add user" style="height: 20px; width: 20px;"> ATSIJUNGTI</strong></a>
     </div>
 </body>
 </html>

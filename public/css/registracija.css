@@ -1,12 +1,12 @@
-.container{
+.Info1{
     position: relative;
     text-align: center;
-    top: 180px;
+    top: 100px;
     left: 543px;
     width: 450px;
     height: 400px;
 }
-.Prisijunk{
+.Reg{
     font-family: Intro, Helvetica, Arial, sans-serif;
     font-size: 35px;
     font-weight: 300;
@@ -19,13 +19,13 @@ input[type="text"]{
     border-top: none;
     border-left: none;
     border-right: none;
+    margin-bottom: 15px;
 }
 input[type="password"]{
     width: 250px;
     height: 40px;
-    margin-top: 15px;
-    font-size: 16px;
     font-family: Intro, Helvetica, Arial, sans-serif;
+    font-size: 16px;
     border-top: none;
     border-left: none;
     border-right: none;
@@ -50,10 +50,3 @@ button[type="submit"]:active{
     width: 200px;
     height: 35px;
 }
-.Help{
-    font-family: Intro, Helvetica, Arial, sans-serif;
-    display: inline-block;
-    color: rgb(44, 71, 221);
-    margin-bottom: 15px;
-}
-

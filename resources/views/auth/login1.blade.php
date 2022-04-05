@@ -4,23 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom Authentification</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>UNITEAM</title>
+    @extends('layouts.header') 
+    <link href="{{ URL::asset('css/login.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body>
-   <div class="Fixed">
-        <img class="Logo" src="Images/TEAM.png" alt="Page logo" >
-        <a class="Link" href="/">PAGRINDINIS</a>
-        <a class="Link" href="">ŽAIDIMAI</a>
-        <a class="Link" href="">PAGALBA</a>
-        <a class="Link" href="about">APIE MUS</a>
-        <a class="Dash" href="">|</a>
-        <a class="Link" href="prisijungti"><strong><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;"> PRISIJUNGTI</strong></a>
-    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
-                <h4>Prisijunk</h4>
+                <h4 class="Prisijunk">Prisijunk</h4>
                 <form action="{{route('login-user')}}" method="post"> 
                     @if(Session::has('success'))
                     <div class="alert alert-success">{{Session::get('success')}}</div>
@@ -30,19 +22,17 @@
                     @endif
                     @csrf
                     <div class="form-group">
-                        <label for="nickname">Naudotojo vardas</label>
                         <input type="text" class="form-control" 
-                        name="nickname" value="{{old('nickname')}}">
+                        name="nickname" value="{{old('nickname')}}" placeholder="Naudotojo vardas">
                         <span class="text-danger">@error('nickname') {{$message}} @enderror</span>
                     </div>
                     <div class="form-group">
-                        <label for="password">Slaptažodis</label>
                         <input type="password" class="form-control" 
-                        name="password" value="">
+                        name="password" value="" placeholder="Slaptažodis">
                         <span class="text-danger">@error('password') {{$message}} @enderror</span>
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-block btn-primary" type="submit">Prisijunkti</button>
+                        <button class="btn btn-block btn-primary" type="submit">Prisijungti</button>
                     </div>
                     <br>
                     <a class="Help" href="">Pamiršote slaptažodį?</a><br>
