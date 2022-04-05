@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CustomAuthController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,6 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/prisijungti', function () {
-    return view('login');
-});
+Route::get('/registracija',[CustomAuthController::class, 'registration']);
+Route::get('/prisijungti',[CustomAuthController::class, 'login']);
+Route::post('/register-user',[CustomAuthController::class, 'registerUser'])->name('register-user');
