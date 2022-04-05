@@ -22,7 +22,7 @@ Route::get('/about', function () {
 Route::get('/registracija',[CustomAuthController::class, 'registration']);
 Route::get('/prisijungti',[CustomAuthController::class, 'login']);
 Route::post('/register-user',[CustomAuthController::class, 'registerUser'])->name('register-user');
-
+Route::post('login-user',[CustomAuthController::class, 'loginUser'])->name('login-user');
 Route::get('/admin', function () {
     return view('admin');
 });
