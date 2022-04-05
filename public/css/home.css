@@ -169,3 +169,61 @@
     margin-left: 45%;
     font-family: Intro, Helvetica, Arial, sans-serif;
 }
+.Info{
+    position: relative;
+    text-align: center;
+    top: 200px;
+    left: 543px;
+    width: 450px;
+    height: 400px;
+}
+.Prisijunk{
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    font-size: 35px;
+    font-weight: 300;
+}
+#Name{
+    width: 250px;
+    height: 40px;
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+#Password{
+    width: 250px;
+    height: 40px;
+    margin-top: 15px;
+    font-size: 16px;
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+input[type="submit"]{
+    margin-top: 60px;
+    width: 250px;
+    height: 40px;
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(44, 71, 221);
+    margin-bottom: 20px;
+}
+input[type="submit"]:hover{
+    box-shadow: 5px 5px 5px #ccc;
+}
+input[type="submit"]:active{
+    font-size: 20px;
+    width: 200px;
+    height: 35px;
+}
+.Help{
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    display: inline-block;
+    color: rgb(44, 71, 221);
+    margin-bottom: 15px;
+}

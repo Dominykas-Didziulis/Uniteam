@@ -1,5 +1,7 @@
+@extends('layouts.mainPage')
+
 <!DOCTYPE html>
-<html >
+<html>
 <head>
     <title>UNITEAM</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8 ">
