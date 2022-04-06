@@ -15,6 +15,12 @@ class CustomAuthController extends Controller
 
     public function registration(){
         return view("auth.registration");
+    }  
+    public function logout(){
+        if(Session::has('loginId')){
+            Session::pull('loginId');
+            return redirect('prisijungti');
+        }
     }
     public function registerUser(Request $request){
         $request->validate([
@@ -47,7 +53,7 @@ class CustomAuthController extends Controller
         {
             if(Hash::check($request->password,$user->password)){
                 $request->session()->put('loginId',$user->id);
-                return redirect('about');
+                return redirect('registracija');
             }
             else
             {

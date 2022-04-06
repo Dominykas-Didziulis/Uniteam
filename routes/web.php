@@ -19,8 +19,9 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
-Route::get('/registracija',[CustomAuthController::class, 'registration']);
-Route::get('/prisijungti',[CustomAuthController::class, 'login']);
+Route::get('/registracija',[CustomAuthController::class, 'registration'])->middleware('isLoggedIn');
+Route::get('/prisijungti',[CustomAuthController::class, 'login'])->middleware('alreadyLoggedIn');
+Route::get('/atsijungti', [CustomAuthController::class, 'logout']);
 Route::post('/register-user',[CustomAuthController::class, 'registerUser'])->name('register-user');
 Route::post('login-user',[CustomAuthController::class, 'loginUser'])->name('login-user');
 Route::get('/admin', function () {
