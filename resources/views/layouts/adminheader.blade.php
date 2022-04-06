@@ -14,7 +14,7 @@
         <img class="Logo" src="Images/TEAM.png" alt="Page logo" >
         <a class="Link" href="/">PAGRINDINIS</a>
         <a class="Link" href="">ŽAIDIMAI</a>
-        <a class="Link" href="">PAGALBA</a>
+        <a class="Link" href="">NAUDOTOJAI</a>
         <a class="Link" href="about">APIE MUS</a>
         <a class="Dash" href="">|</a>
         <a class="Link" href="about">NARIŲ SĄRAŠAS</a>

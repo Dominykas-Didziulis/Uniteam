@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
+use App\Http\Controllers\Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +26,4 @@ Route::get('/prisijungti',[CustomAuthController::class, 'login'])->middleware('a
 Route::get('/atsijungti', [CustomAuthController::class, 'logout']);
 Route::post('/register-user',[CustomAuthController::class, 'registerUser'])->name('register-user');
 Route::post('login-user',[CustomAuthController::class, 'loginUser'])->name('login-user');
-Route::get('/admin', function () {
-    return view('admin');
-});
+Route::get('/admin',[AdminController::class,'show']);
