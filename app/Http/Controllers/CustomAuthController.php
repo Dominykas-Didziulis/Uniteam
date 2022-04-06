@@ -24,11 +24,11 @@ class CustomAuthController extends Controller
     }
     public function registerUser(Request $request){
         $request->validate([
-            'name'=>'required',
-            'subname'=>'required',
-            'nickname'=>'required|unique:users',
+            'name'=>'required|max:20',
+            'subname'=>'required|max:20',
+            'nickname'=>'required|unique:users|max:20',
             'email'=>'required|email',
-            'password'=>'required|min:4|max:30'
+            'password'=>'required|min:4'
         ]);
         $user = new User();
         $user->name = $request->name;
@@ -46,7 +46,7 @@ class CustomAuthController extends Controller
     public function loginUser(Request $request){
         $request->validate([
             'nickname'=>'required',
-            'password'=>'required|min:4|max:30'
+            'password'=>'required|min:4'
         ]);
         $user = User::where('nickname','=',$request->nickname)->first();
         if($user)

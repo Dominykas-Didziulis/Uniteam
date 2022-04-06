@@ -17,7 +17,7 @@
         <a class="Link" href="">PAGALBA</a>
         <a class="Link" href="about">APIE MUS</a>
         <a class="Dash" href="">|</a>
-        <a class="Link" href="about">Narių sąrašas</a>
+        <a class="Link" href="about">NARIŲ SĄRAŠAS</a>
         <a class="Link" href="atsijungti"><strong><img src="Images/exit.png" alt="Add user" style="height: 20px; width: 20px;"> ATSIJUNGTI</strong></a>
     </div>
 </body>
