@@ -21,6 +21,9 @@ Route::get('/', function () {
 Route::get('/about', function () {
     return view('about');
 });
+Route::get('/game', function () {
+    return view('gametest');
+});
 Route::get('/registracija',[CustomAuthController::class, 'registration'])->middleware('isLoggedIn');
 Route::get('/prisijungti',[CustomAuthController::class, 'login'])->middleware('alreadyLoggedIn');
 Route::get('/atsijungti', [CustomAuthController::class, 'logout']);
