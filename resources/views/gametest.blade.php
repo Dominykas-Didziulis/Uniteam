@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | My project</title>
+    <title>Unity WebGL Player | Card_flip</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
@@ -17,8 +17,10 @@
         </div>
       </div>
       <div id="unity-warning"> </div>
-      <div id="unity-footer">  
-        <div id="unity-build-title">My project</div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Card_flip</div>
       </div>
     </div>
     <script>
@@ -61,7 +63,7 @@
         codeUrl: buildUrl + "/testweb2.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "My project",
+        productName: "Card_flip",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
