@@ -17,4 +17,21 @@ class AdminController extends Controller
         return view('admin',['users'=>$data]);
     }
 
+    public function editRole($id)
+    {
+        $data= User::find($id);
+        return view('editRole',['data'=>$data]);
+    }
+    public function UpdateRole(Request $req)
+    {
+        $data=User::find($req->id);
+        $data->name=$req->name;
+        $data->subname=$req->subname;
+        $data->email=$req->email;
+        $data->nickname=$req->nickname;
+        $data->ulevel=$req->ulevel;
+        $data->save();
+        return redirect('admin');
+    }
+
 }

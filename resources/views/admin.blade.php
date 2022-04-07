@@ -31,6 +31,9 @@
       <th scope="col" class="">
         Rolė
       </th>
+      <th scope="col" class="">
+        Redagavimas
+      </th>
     </tr>
 
     @foreach($users as $user)
@@ -51,8 +54,12 @@
         {{ $user['nickname']}}
     </th>
     <th scope="col" class="">
-        {{ $user['id']}}
+        {{ $user['ulevel']}}
     </th>
+    <th>
+        <a href={{"edit/".$user['id']}}>Redaguoti</a>
+    </th>
+    
     </tr>
 
     @endforeach
