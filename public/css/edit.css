@@ -1,0 +1,70 @@
+.Info{
+    position: relative;
+    text-align: center;
+}
+.RedRol{
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+}
+label{
+    font-family: Intro, Helvetica, Arial, sans-serif;
+}
+input[type="text"]{
+    width: 250px;
+    height: 40px;
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 5px;
+}
+select{
+    width: 250px;
+    height: 40px;
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    margin-bottom: 5px;
+}
+button[type="submit"]{
+    width: 250px;
+    height: 40px;
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(44, 71, 221);
+    margin-bottom: 20px;
+}
+button[type="submit"]:hover{
+    box-shadow: 5px 5px 5px #ccc;
+}
+button[type="submit"]:active{
+    font-size: 20px;
+    width: 200px;
+    height: 35px;
+}
+.Atgal{
+    width: 250px;
+    height: 40px;
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(236, 14, 14);
+    margin-bottom: 20px;
+}
+.Atgal:hover{
+    box-shadow: 5px 5px 5px #ccc;
+}
+.Atgal:active{
+    font-size: 20px;
+    width: 200px;
+    height: 35px;
+}

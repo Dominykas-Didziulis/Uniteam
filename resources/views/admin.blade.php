@@ -18,9 +18,6 @@
     <table class="Lentele" cellspacing="0">
      
         <tr>
-          <th scope="col" class="id">
-                Id
-          </th>
           <th scope="col" class="">
               Vardas
           </th>
@@ -36,13 +33,13 @@
           <th scope="col" class="">
             Rolė
           </th>
+          <th scope="col" class="Red">
+            Redagavimas
+          </th>
         </tr>
     
         @foreach($users as $user)
         <tr>
-        <td scope="col" class="">
-            {{ $user['id']}}
-        </td>
         <td scope="col" class="">
             {{ $user['name']}}
         </td>
@@ -56,7 +53,22 @@
             {{ $user['nickname']}}
         </td>
         <td scope="col" class="">
-            {{ $user['id']}}
+            <?php if( $user['ulevel'] == 1){
+                echo ("Administratorius");
+            }
+            elseif ( $user['ulevel'] == 2) { 
+                echo ("Komandos vadovas");
+            }
+            elseif ($user['ulevel'] == 3) {  
+                echo ("Komandos narys");
+            }
+            else {
+                echo ("Nenustatyta");
+            }  
+            ?>  
+        </td>
+        <td>
+            <a href={{"edit/".$user['id']}}><button class="Redaguoti">Redaguoti</button></a>
         </td>
         </tr>
     

@@ -1,13 +1,17 @@
+*{
+    text-decoration: none;
+}
 .Lentele{
     position: relative;
     top: 200px;
-    left: 130px;
-}
-.id{
-    width: 25px;
+    left: 80px;
+    border-radius: 15xp;
 }
 .Pastas{
     width: 300px;
+}
+.Red{
+    width: 150px;
 }
 th{
     background-color: rgb(209, 206, 206);
@@ -23,14 +27,11 @@ td{
     background-color: rgb(236, 236, 236);
     font-family: Intro, Helvetica, Arial, sans-serif;
 }
-table{
-    border-radius: 15xp;
-}
 input[type="submit"]
 {
     position: relative;
     top: 180px;
-    left: 1155px;
+    left: 1225px;
     font-family: Intro, Helvetica, Arial, sans-serif;
     padding: 10px;
     background-color: rgb(44, 71, 221);
@@ -46,4 +47,16 @@ input[type="submit"]:hover{
 input[type="submit"]:active{
     font-size: 12px;
     width: 200px;
+}
+.Redaguoti{
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    background-color: rgb(44, 71, 221);
+    width: 110px;
+    height: 25px;
+    border-radius: 10px;
+    color: white;
+    font-weight: 600;
+}
+.Redaguoti:hover{
+    box-shadow: 5px 5px 5px #ccc;
 }
