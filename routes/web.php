@@ -30,3 +30,5 @@ Route::get('/atsijungti', [CustomAuthController::class, 'logout']);
 Route::post('/register-user',[CustomAuthController::class, 'registerUser'])->name('register-user');
 Route::post('login-user',[CustomAuthController::class, 'loginUser'])->name('login-user');
 Route::get('/admin',[AdminController::class,'show']);
+Route::get('edit/{id}',[AdminController::class,'editRole']);
+Route::post('edit',[AdminController::class,'UpdateRole']);
