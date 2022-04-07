@@ -1,10 +1,37 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>UNITEAM</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8 ">
     <link href="{{ URL::asset('css/home.css') }}" rel="stylesheet" type="text/css" >
-    @extends('layouts.header') 
+    
+    <?php if(isset($_SESSION['ulevel'])== "1"): ?>
+    {
+       @extends('layouts.adminheader');
+    }
+    <?php elseif(isset($_SESSION['ulevel'])=="2"): ?>
+    {
+        @extends('layouts.user')";
+    }
+    <?php elseif(isset($_SESSION['ulevel'])=="3"): ?>
+    {
+        @extends('layouts.user')";
+    }
+    <?php elseif(isset($_SESSION['ulevel'])=="0"): ?>
+    {
+        @extends('layouts.user')";
+    }
+    
+    <?php else: ?>
+    {
+        @extends('layouts.header')";
+    }
+    <?php endif; ?>
+    
+     
 </head>
 <body>
     <div class="Header">

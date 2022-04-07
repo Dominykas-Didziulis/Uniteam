@@ -1,25 +1,39 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html >
 <head>
     <title>UNITEAM</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8 ">
     <link href="{{ URL::asset('css/about.css') }}" rel="stylesheet" type="text/css" >
+    
+    <?php if(isset($_SESSION['ulevel'])=="2"): ?>
+    {
+        @extends('layouts.user')";
+    }
+    <?php elseif(isset($_SESSION['ulevel'])== "1"): ?>
+    {
+       @extends('layouts.adminheader');
+    }
+    
+    <?php elseif(isset($_SESSION['ulevel'])=="3"): ?>
+    {
+        @extends('layouts.user')";
+    }
+    <?php elseif(isset($_SESSION['ulevel'])=="0"): ?>
+    {
+        @extends('layouts.user')";
+    }
+    
+    <?php else: ?>
+    {
+        @extends('layouts.header')";
+    }
+    <?php endif; ?>
 </head>
 <body>
-    <div class="Fixed">
-        <img class="Logo" src="Images/TEAM.png" alt="Page logo" >
-        <a class="Link" href="/">PAGRINDINIS</a>
-        <a class="Link" href="">ŽAIDIMAI</a>
-        <a class="Link" href="">PAGALBA</a>
-        <a class="Link" href="about">APIE MUS</a>
-        <a class="Dash" href="">|</a>
-        @guest
-        <a class="Link" href="prisijungti"><strong><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;"> PRISIJUNGTI</strong></a>
-        @endguest
-        @auth 
-        <a class="Link" href="atsijungti"><strong><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;"> Atsijungti</strong></a>
-        @endauth
-    </div>
+   
 
     <div class="Header">
         <p class="Moto">APIE MUS IR MŪSŲ KURIAMĄ PROJEKTĄ</p>

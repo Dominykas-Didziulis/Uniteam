@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
+session_start();
 
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -36,7 +36,9 @@ class CustomAuthController extends Controller
         $user->nickname = $request->nickname;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
+        $user->ulevel = "3";
         $res = $user->save();
+        
         if($res){
             return back()->with('success', 'Naujas narys užregistruotas sėkmingai');
         }else{
@@ -44,6 +46,7 @@ class CustomAuthController extends Controller
         }
     }
     public function loginUser(Request $request){
+        
         $request->validate([
             'nickname'=>'required',
             'password'=>'required|min:4'
@@ -53,7 +56,8 @@ class CustomAuthController extends Controller
         {
             if(Hash::check($request->password,$user->password)){
                 $request->session()->put('loginId',$user->id);
-                return redirect('registracija');
+                $request->session()->put('ulevel',$user->ulevel);
+                return redirect('about');
             }
             else
             {

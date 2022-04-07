@@ -17,9 +17,8 @@
         <a class="Link" href="">PAGALBA</a>
         <a class="Link" href="about">APIE MUS</a>
         <a class="Dash" href="">|</a>
-        @auth
         <a class="Link" href="atsijungti"><strong><img src="Images/exit.png" alt="Add user" style="height: 20px; width: 20px;"> ATSIJUNGTI</strong></a>
-        @endauth
+        
     </div>
 </body>
 </html>
