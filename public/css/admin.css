@@ -1,0 +1,49 @@
+.Lentele{
+    position: relative;
+    top: 200px;
+    left: 130px;
+}
+.id{
+    width: 25px;
+}
+.Pastas{
+    width: 300px;
+}
+th{
+    background-color: rgb(209, 206, 206);
+    border-color: rgb(209, 206, 206);
+    width: 200px;
+    border-collapse: separate;
+    padding: 10px;
+    font-family: Intro, Helvetica, Arial, sans-serif;
+}
+td{
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(236, 236, 236);
+    font-family: Intro, Helvetica, Arial, sans-serif;
+}
+table{
+    border-radius: 15xp;
+}
+input[type="submit"]
+{
+    position: relative;
+    top: 180px;
+    left: 1155px;
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    padding: 10px;
+    background-color: rgb(44, 71, 221);
+    border: none;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+input[type="submit"]:hover{
+    box-shadow: 5px 5px 5px #ccc;
+}
+input[type="submit"]:active{
+    font-size: 12px;
+    width: 200px;
+}
