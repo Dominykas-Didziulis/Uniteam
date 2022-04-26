@@ -69,4 +69,20 @@ class CustomAuthController extends Controller
             return back()->with('fail','Šis naudotojo vardas nėra registruotas.');
         }
     }
+    public function editUser($id)
+    {
+        $data= User::find($id);
+        return view('editUser',['data'=>$data]);
+    }
+    public function UpdateUser(Request $req)
+    {
+        $data=User::find($req->id);
+        $data->name=$req->name;
+        $data->subname=$req->subname;
+        $data->email=$req->email;
+        $data->nickname=$req->nickname;
+        $data->ulevel=$req->ulevel;
+        $data->save();
+        return redirect('user');
+    }
 }

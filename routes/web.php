@@ -35,3 +35,7 @@ Route::post('login-user',[CustomAuthController::class, 'loginUser'])->name('logi
 Route::get('/admin',[AdminController::class,'show']);
 Route::get('edit/{id}',[AdminController::class,'editRole']);
 Route::post('edit',[AdminController::class,'UpdateRole']);
+
+Route::get('/user',[CustomAuthController::class,'show']);
+Route::post('edituser',[CustomAuthController::class,'UpdateUser']);
+Route::get('edituser/{id}',[CustomAuthController::class,'editUser']);
