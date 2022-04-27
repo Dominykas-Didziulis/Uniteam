@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>UNITEAM</title>
     <link href="{{ URL::asset('css/admin.css') }}" rel="stylesheet" type="text/css" >
-    @extends('layouts.adminheader')
-</head>
+    @extends('layouts.app')
+
 <body>
     <form action='registracija' method='get'>
         <input type='hidden' name='staffId' id='staffId' value='$staffId'> 
@@ -15,6 +8,8 @@
           <input type='submit' name='submit' id='submit' value='Naujo naudotojo registracija' class='bg-white'>
         </td>
     </form>
+
+    @section('content')    
     <table class="Lentele" cellspacing="0">
      
         <tr>
@@ -75,4 +70,4 @@
         @endforeach
     </table>
 </body>
-</html>
+@endsection

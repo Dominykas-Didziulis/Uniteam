@@ -12,7 +12,6 @@ class AdminController extends Controller
 {
     public function show()
     {
-
         $data= User::all();
         return view('admin',['users'=>$data]);
     }

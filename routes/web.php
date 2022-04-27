@@ -1,41 +1,43 @@
 <?php
 
-use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomAuthController;
-use App\Http\Controllers\Controller;
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\PostLikeController;
+use App\Http\Controllers\UserPostController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\UserProfileController;
 
 Route::get('/', function () {
     return view('home');
-});
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/game', function () {
-    return view('gametest');
-});
-Route::get('/quiz', function () {
-    return view('quiztest');
-});
-Route::get('/registracija',[CustomAuthController::class, 'registration'])->middleware('isLoggedIn');
-Route::get('/prisijungti',[CustomAuthController::class, 'login'])->middleware('alreadyLoggedIn');
-Route::get('/atsijungti', [CustomAuthController::class, 'logout']);
-Route::post('/register-user',[CustomAuthController::class, 'registerUser'])->name('register-user');
-Route::post('login-user',[CustomAuthController::class, 'loginUser'])->name('login-user');
-Route::get('/admin',[AdminController::class,'show']);
+})->name('home');
+
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->name('dashboard');
+
+Route::get('/users/{user:username}/posts', [UserPostController::class, 'index'])->name('users.posts');
+
+Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
+
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store']);
+
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/register', [RegisterController::class, 'store']);
+
+Route::get('/posts', [PostController::class, 'index'])->name('posts');
+Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+Route::post('/posts', [PostController::class, 'store']);
+Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+
+Route::post('/posts/{post}/likes', [PostLikeController::class, 'store'])->name('posts.likes');
+Route::delete('/posts/{post}/likes', [PostLikeController::class, 'destroy'])->name('posts.likes');
+
+Route::get('/admin',[AdminController::class,'show'])->name('admin');
 Route::get('edit/{id}',[AdminController::class,'editRole']);
 Route::post('edit',[AdminController::class,'UpdateRole']);
 
-Route::get('/user',[CustomAuthController::class,'show']);
-Route::post('edituser',[CustomAuthController::class,'UpdateUser']);
-Route::get('edituser/{id}',[CustomAuthController::class,'editUser']);
+Route::get('/userprofile/{user:id}', [UserProfileController::class, 'show'])->name('userprofile');
