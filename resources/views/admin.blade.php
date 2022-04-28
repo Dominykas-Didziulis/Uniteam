@@ -8,12 +8,16 @@
     <link href="{{ URL::asset('css/admin.css') }}" rel="stylesheet" type="text/css" >
     @extends('layouts.header')
 </head>
-<body>
-    <form action='registracija' method='get'>
+<body>  
+    <form action="{{ route('register') }}" method="get">
         <input type='hidden' name='staffId' id='staffId' value='$staffId'> 
         <input type='submit' name='submit' id='submit' value='Naujo naudotojo registracija' class='bg-white'>
-        
     </form>
+ 
+        
+    </a>   
+
+
 
     @section('content')    
     <table class="Lentele" cellspacing="0">

@@ -16,7 +16,7 @@
         <div class="Fixed">
             <nav class="p-6 bg-white flex justify-between mb-6">
                 <ul class="flex items-center">
-                    <img class="Logo" src="Images/TEAM.png" alt="Page logo" >  
+                    <a href="{{ route('home') }}"><img class="Logo" src="Images/TEAM.png" alt="Page logo" >  </a>
                     <a href="/" class="Link">Pagrindinis</a>
                     <a href="" class="Link">Žaidimai</a>
                     <a href="" class="Link">Pagalba</a>

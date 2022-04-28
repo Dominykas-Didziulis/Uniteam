@@ -11,7 +11,7 @@ class RegisterController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['guest']);
+        $this->middleware(['auth']);
     }
     
     public function index()
@@ -38,8 +38,8 @@ class RegisterController extends Controller
             'ulevel' => 3,
         ]);
 
-        auth()->attempt($request->only('email', 'password'));
+       // auth()->attempt($request->only('email', 'password'));
 
-        return redirect()->route('dashboard');
+        return redirect()->route('admin');
     }
 }
