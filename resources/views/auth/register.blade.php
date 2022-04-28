@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html >
 <head>
+    @extends('layouts.header')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Uniteam</title>
-    @extends('layouts.header')
     <link rel="stylesheet" href="{{ asset('css/registracija.css') }}">
 </head>
 <body>
@@ -79,7 +79,7 @@
                     </div>
 
                     <div>
-                        <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Registruoti</button>
+                        <button type="submit" class="Btn" >Registruoti</button>
                     </div>
                 </div>
             </form>

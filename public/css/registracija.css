@@ -32,7 +32,7 @@ input[type="password"]{
     border-right: none;
     margin-bottom: 15px;
 }
-button[type="submit"]{
+.Btn{
     margin-top: 20px;
     width: 250px;
     height: 40px;
@@ -43,30 +43,14 @@ button[type="submit"]{
     border-radius: 5px;
     background-color: rgb(44, 71, 221);
     margin-bottom: 20px;
+    position: relative;
+    margin-left: -2400px;
+    margin-top: 100px;
 }
-button[type="submit"]:hover{
+.Btn:hover{
     box-shadow: 5px 5px 5px #ccc;
 }
-button[type="submit"]:active{
-    font-size: 20px;
-    width: 200px;
-    height: 35px;
-}
-.Atgal{
-    width: 250px;
-    height: 40px;
-    font-family: Intro, Helvetica, Arial, sans-serif;
-    font-size: 25px;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    background-color: rgb(236, 14, 14);
-    margin-bottom: 20px;
-}
-.Atgal:hover{
-    box-shadow: 5px 5px 5px #ccc;
-}
-.Atgal:active{
+.Btn:active{
     font-size: 20px;
     width: 200px;
     height: 35px;
