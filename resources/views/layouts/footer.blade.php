@@ -14,7 +14,7 @@
         <a class="F_Link" href="/">PAGRINDINIS</a>
         <a class="F_Link" href="">ŽAIDIMAI</a>
         <a class="F_Link" href="">PAGALBA</a>
-        <a class="F_Link" href="about">APIE MUS</a>
+        <a class="F_Link" href="{{ route('about') }}">APIE MUS</a>
         <p class="Copyright">© 2022 | COVID PAKIRSTI</p>
 </footer>
 </body>

@@ -56,7 +56,21 @@ input[type="submit"]:active{
     border-radius: 10px;
     color: white;
     font-weight: 600;
+    margin-top: 10px;
 }
 .Redaguoti:hover{
     box-shadow: 5px 5px 5px #ccc;
+}
+.Redg{
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    display: block;
+    width: 115px;
+    height: 20px;
+    background: rgb(44, 71, 221);
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
 }

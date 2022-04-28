@@ -24,6 +24,7 @@ input[type="password"]{
     width: 250px;
     height: 40px;
     margin-top: 15px;
+    margin-bottom: 25px;
     font-size: 16px;
     font-family: Intro, Helvetica, Arial, sans-serif;
     border-top: none;
@@ -31,7 +32,7 @@ input[type="password"]{
     border-right: none;
 }
 button[type="submit"]{
-    margin-top: 60px;
+    margin-top: 30px;
     width: 250px;
     height: 40px;
     font-family: Intro, Helvetica, Arial, sans-serif;

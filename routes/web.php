@@ -41,3 +41,7 @@ Route::get('edit/{id}',[AdminController::class,'editRole']);
 Route::post('edit',[AdminController::class,'UpdateRole']);
 
 Route::get('/userprofile/{user:id}', [UserProfileController::class, 'show'])->name('userprofile');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');

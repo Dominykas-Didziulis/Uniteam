@@ -1,12 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uniteam</title>
     <link href="{{ URL::asset('css/admin.css') }}" rel="stylesheet" type="text/css" >
-    @extends('layouts.app')
-
+    @extends('layouts.header')
+</head>
 <body>
     <form action='registracija' method='get'>
         <input type='hidden' name='staffId' id='staffId' value='$staffId'> 
-        <td class=''>
-          <input type='submit' name='submit' id='submit' value='Naujo naudotojo registracija' class='bg-white'>
-        </td>
+        <input type='submit' name='submit' id='submit' value='Naujo naudotojo registracija' class='bg-white'>
+        
     </form>
 
     @section('content')    
@@ -63,11 +69,12 @@
             ?>  
         </td>
         <td>
-            <a href={{"edit/".$user['id']}}><button class="Redaguoti">Redaguoti</button></a>
+            <a href={{"edit/".$user['id']}} class="Redg">Redaguoti</a>
         </td>
         </tr>
     
         @endforeach
     </table>
+    @endsection
 </body>
-@endsection
+</html>

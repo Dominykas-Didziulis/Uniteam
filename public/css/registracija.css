@@ -10,6 +10,7 @@
     font-family: Intro, Helvetica, Arial, sans-serif;
     font-size: 35px;
     font-weight: 300;
+    margin-top: 50px;
 }
 input[type="text"]{
     width: 250px;
@@ -29,9 +30,10 @@ input[type="password"]{
     border-top: none;
     border-left: none;
     border-right: none;
+    margin-bottom: 15px;
 }
 button[type="submit"]{
-    margin-top: 60px;
+    margin-top: 20px;
     width: 250px;
     height: 40px;
     font-family: Intro, Helvetica, Arial, sans-serif;
@@ -46,6 +48,25 @@ button[type="submit"]:hover{
     box-shadow: 5px 5px 5px #ccc;
 }
 button[type="submit"]:active{
+    font-size: 20px;
+    width: 200px;
+    height: 35px;
+}
+.Atgal{
+    width: 250px;
+    height: 40px;
+    font-family: Intro, Helvetica, Arial, sans-serif;
+    font-size: 25px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(236, 14, 14);
+    margin-bottom: 20px;
+}
+.Atgal:hover{
+    box-shadow: 5px 5px 5px #ccc;
+}
+.Atgal:active{
     font-size: 20px;
     width: 200px;
     height: 35px;

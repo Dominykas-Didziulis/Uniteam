@@ -1,80 +1,92 @@
-@extends('layouts.app')
-
-@section('content')
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Uniteam</title>
+    @extends('layouts.header')
+    <link rel="stylesheet" href="{{ asset('css/registracija.css') }}">
+</head>
+<body>
+    @section('content')
     <div class="flex justify-center">
         <div class="w-4/12 bg-white p-6 rounded-lg">
             <form action="{{ route('register') }}" method="post">
-                @csrf
-                <div class="mb-4">
-                    <label for="name" class="sr-only">Vardas</label>
-                    <input type="text" name="name" id="name" placeholder="Vardas" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror" value="{{ old('name') }}">
+                <div class="Info1">
 
-                    @error('name')
-                        <div class="text-red-500 mt-2 text-sm">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
+                    <h1 class="Reg">Registruoti naudotoją</h1>
 
-                <div class="mb-4">
-                    <label for="subname" class="sr-only">Pavardė</label>
-                    <input type="text" name="subname" id="subname" placeholder="Pavardė" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('subname') border-red-500 @enderror" value="{{ old('subname') }}">
+                    @csrf
+                    <div class="mb-4">
+                        <input type="text" name="name" id="name" placeholder="Vardas" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('name') border-red-500 @enderror" value="{{ old('name') }}">
 
-                    @error('nickname')
-                        <div class="text-red-500 mt-2 text-sm">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
+                        @error('name')
+                            <div class="text-red-500 mt-2 text-sm">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
 
-                <div class="mb-4">
-                    <label for="nickname" class="sr-only">Slapyvardis</label>
-                    <input type="text" name="nickname" id="nickname" placeholder="Slapyvardis" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('nickname') border-red-500 @enderror" value="{{ old('nickname') }}">
+                    <div class="mb-4">
+                        <input type="text" name="subname" id="subname" placeholder="Pavardė" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('subname') border-red-500 @enderror" value="{{ old('subname') }}">
 
-                    @error('nickname')
-                        <div class="text-red-500 mt-2 text-sm">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
+                        @error('nickname')
+                            <div class="text-red-500 mt-2 text-sm">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
 
-                <div class="mb-4">
-                    <label for="email" class="sr-only">El. paštas</label>
-                    <input type="text" name="email" id="email" placeholder="El. paštas" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror" value="{{ old('email') }}">
+                    <div class="mb-4">
+                        <input type="text" name="nickname" id="nickname" placeholder="Slapyvardis" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('nickname') border-red-500 @enderror" value="{{ old('nickname') }}">
 
-                    @error('email')
-                        <div class="text-red-500 mt-2 text-sm">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
+                        @error('nickname')
+                            <div class="text-red-500 mt-2 text-sm">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
 
-                <div class="mb-4">
-                    <label for="password" class="sr-only">Slaptažodis</label>
-                    <input type="password" name="password" id="password" placeholder="Slaptažodis" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password') border-red-500 @enderror" value="">
+                    <div class="mb-4">
+                        <input type="text" name="email" id="email" placeholder="El. paštas" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('email') border-red-500 @enderror" value="{{ old('email') }}">
 
-                    @error('password')
-                        <div class="text-red-500 mt-2 text-sm">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
+                        @error('email')
+                            <div class="text-red-500 mt-2 text-sm">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
 
-                <div class="mb-4">
-                    <label for="password_confirmation" class="sr-only">Pakartoti slaptažodį</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Pakartoti slaptažodį" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password_confirmation') border-red-500 @enderror" value="">
+                    <div class="mb-4">
+                        <input type="password" name="password" id="password" placeholder="Slaptažodis" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password') border-red-500 @enderror" value="">
 
-                    @error('password_confirmation')
-                        <div class="text-red-500 mt-2 text-sm">
-                            {{ $message }}
-                        </div>
-                    @enderror
-                </div>
+                        @error('password')
+                            <div class="text-red-500 mt-2 text-sm">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
 
-                <div>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Registruotis</button>
+                    <div class="mb-4">
+                        <input type="password" name="password_confirmation" id="password_confirmation" placeholder="Pakartoti slaptažodį" class="bg-gray-100 border-2 w-full p-4 rounded-lg @error('password_confirmation') border-red-500 @enderror" value="">
+
+                        @error('password_confirmation')
+                            <div class="text-red-500 mt-2 text-sm">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+
+                    <div>
+                        <button type="submit" class="bg-blue-500 text-white px-4 py-3 rounded font-medium w-full">Registruoti</button>
+                    </div>
+
+                    <a href="{{ route('admin') }}"><button class="Atgal">Grįžti</button></a>
                 </div>
             </form>
         </div>
     </div>
 @endsection
+</body>
+</html>
