@@ -30,7 +30,15 @@
                     @endauth
                     @auth
                         <a href="" class="Dash">|</a>
-                        <a href="{{"userprofile"}}" class="ink">{{ auth()->user()->name }}</a>
+                        <a href="" class="ink">{{ auth()->user()->name }}</a>
+                        
+                       {{-- <form action="{{ route('user.update', auth()->id()) }}" method="get">
+                            @csrf
+                            <button type="submit" class="User">
+                                Profilis
+                            </button>
+                        </form> --}}
+
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <button type="submit">Atsijungti</button>

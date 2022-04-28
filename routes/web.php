@@ -41,8 +41,8 @@ Route::get('/admin',[AdminController::class,'show'])->name('admin');
 Route::get('edit/{id}',[AdminController::class,'editRole']);
 Route::post('edit',[AdminController::class,'UpdateRole']);
 
-Route::get('/userprofile',[UserProfileController::class,'show'])->name('userprofile');
-Route::get('/editprofile/{id}', [UserProfileController::class, 'EditUser']);
+Route::get('/update',[LoginController::class,'getUsersCredentials'])->name('user.update');
+Route::post('/update',[LoginController::class,'setUsersCredentials']);
 
 Route::get('/about', function () {return view('about');})->name('about');
 
