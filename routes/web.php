@@ -6,6 +6,7 @@ use App\Http\Controllers\PostLikeController;
 use App\Http\Controllers\UserPostController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\TeamController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -40,8 +41,11 @@ Route::get('/admin',[AdminController::class,'show'])->name('admin');
 Route::get('edit/{id}',[AdminController::class,'editRole']);
 Route::post('edit',[AdminController::class,'UpdateRole']);
 
-Route::get('/userprofile/{user:id}', [UserProfileController::class, 'show'])->name('userprofile');
+Route::get('/userprofile',[UserProfileController::class,'show'])->name('userprofile');
+Route::get('/editprofile/{id}', [UserProfileController::class, 'EditUser']);
 
-Route::get('/about', function () {
-    return view('about');
-})->name('about');
+Route::get('/about', function () {return view('about');})->name('about');
+
+Route::get('/teams',[TeamController::class,'show'])->name('teams');
+Route::get('edit/{id}',[TeamController::class,'editRole']);
+Route::post('edit',[TeamController::class,'UpdateRole']);

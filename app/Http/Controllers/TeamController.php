@@ -2,21 +2,24 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Post;
 use Illuminate\Http\Request;
+use App\Models\User;
+use ReflectionFunctionAbstract;
+use Illuminate\Support\Facades\DB;
 
-class UserProfileController extends Controller
+class TeamController extends Controller
 {
     public function show()
     {
-        $data= User::find();
-        return view('userprofile',['users'=>$data]);
+        $data= User::all();
+        return view('teams',['users'=>$data]);
     }
 
-    public function editUser($id)
+    public function editRole($id)
     {
         $data= User::find($id);
-        return view('editRole',['data'=>$data]);
+        return view('editTeam',['data'=>$data]);
     }
     public function UpdateRole(Request $req)
     {
@@ -27,6 +30,7 @@ class UserProfileController extends Controller
         $data->nickname=$req->nickname;
         $data->ulevel=$req->ulevel;
         $data->save();
-        return redirect('admin');
+        return redirect('teams');
     }
+
 }

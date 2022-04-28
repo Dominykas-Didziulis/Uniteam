@@ -19,7 +19,9 @@
                     <a href="{{ route('home') }}"><img class="Logo" src="Images/TEAM.png" alt="Page logo" >  </a>
                     <a href="/" class="Link">Pagrindinis</a>
                     <a href="" class="Link">Žaidimai</a>
-                    <a href="" class="Link">Pagalba</a>
+                    @auth
+                    <a href="{{ route('teams') }}" class="Link">Komandos</a>
+                    @endauth
                     <a href="{{ route('about') }}" class="Link">Apie mus</a>
                     @auth
                     
@@ -28,7 +30,7 @@
                     @endauth
                     @auth
                         <a href="" class="Dash">|</a>
-                        <a href="" class="ink">{{ auth()->user()->name }}</a>
+                        <a href="{{"userprofile"}}" class="ink">{{ auth()->user()->name }}</a>
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <button type="submit">Atsijungti</button>
