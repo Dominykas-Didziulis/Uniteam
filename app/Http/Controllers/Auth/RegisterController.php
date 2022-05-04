@@ -35,7 +35,7 @@ class RegisterController extends Controller
             'nickname' => $request->nickname,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'ulevel' => 3,
+            'ulevel' => 3
         ]);
 
        // auth()->attempt($request->only('email', 'password'));

@@ -24,13 +24,12 @@
                     @endauth
                     <a href="{{ route('about') }}" class="Link">Apie mus</a>
                     @auth
-                    
                         <a href="{{ route('admin') }}" class="Link">Narių sąrašas</a>
                     
                     @endauth
                     @auth
                         <a href="" class="Dash">|</a>
-                        <a href="" class="ink">{{ auth()->user()->name }}</a>
+                        <a href="" class="ink">{{ auth()->user()->nickname }}</a>
                         
                        {{-- <form action="{{ route('user.update', auth()->id()) }}" method="get">
                             @csrf
