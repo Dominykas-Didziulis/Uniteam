@@ -1,3 +1,4 @@
+ @if ( auth()->user()->ulevel == 1)
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,11 +14,7 @@
         <input type='hidden' name='staffId' id='staffId' value='$staffId'> 
         <input type='submit' name='submit' id='submit' value='Naujo naudotojo registracija' class='bg-white'>
     </form>
- 
-        
-    </a>   
-
-
+         
 
     @section('content')    
     <table class="Lentele" cellspacing="0">
@@ -73,7 +70,7 @@
             ?>  
         </td>
         <td>
-            <a href={{"edit/".$user['id']}} class="Redg">Redaguoti</a>
+            <a href={{"editrole/".$user['id']}} class="Redg">Redaguoti</a>
         </td>
         </tr>
     
@@ -82,3 +79,4 @@
     @endsection
 </body>
 </html>
+@endif

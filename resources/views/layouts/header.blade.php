@@ -20,12 +20,13 @@
                     <a href="/" class="Link">Pagrindinis</a>
                     <a href="" class="Link">Žaidimai</a>
                     @auth
-                    <a href="{{ route('teams') }}" class="Link">Komandos</a>
+                    <a href="{{ route('posts') }}" class="Link">Komandos</a>
                     @endauth
                     <a href="{{ route('about') }}" class="Link">Apie mus</a>
                     @auth
-                        <a href="{{ route('admin') }}" class="Link">Narių sąrašas</a>
-                    
+                    @if ( auth()->user()->ulevel == 1)
+                         <a href="{{ route('admin') }}" class="Link">Narių sąrašas</a>
+                    @endif                    
                     @endauth
                     @auth
                         <a href="" class="Dash">|</a>
@@ -37,12 +38,12 @@
                                 Profilis
                             </button>
                         </form> --}}
-
+                    
                         <form action="{{ route('logout') }}" method="post">
                             @csrf
                             <button type="submit">Atsijungti</button>
                         </form>
-                        
+                      
                     @endauth
 
                     @guest
@@ -54,4 +55,5 @@
         </div>
         @yield('content')
     </body>
+  
 </html>

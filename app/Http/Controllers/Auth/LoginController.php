@@ -34,8 +34,6 @@ class LoginController extends Controller
     }
     public function getUsersCredentials(Request $request)
     {
-        //dd($request->user()->id);
-
         $user=User::find($request->user()->id);
         return view('auth.update', ['user'=>$user]);
     }
@@ -57,7 +55,6 @@ class LoginController extends Controller
 
         $user=User::find($request->user()->id);
         
-
         $user->name=$request->name;
         $user->nickname=$request->nickname;
         $user->email=$request->email;
