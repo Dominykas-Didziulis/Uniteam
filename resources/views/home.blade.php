@@ -1,15 +1,109 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @extends('layouts.header')
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{ asset('css/home.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+    {{-- <link rel="stylesheet" href="{{ asset('css/home.css') }}"> --}}
     <title>Uniteam</title>
+
+    
 </head>
 <body>
-    @section('content')
+    {{-- Navbar --}}
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="Images/TEAM.png" style="width: 255px; height: 109px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Pagrindinis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Žaidimai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Apie mus</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('login') }}" ><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;">Prisijungti</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    {{-- Image slider --}}
+    <div id="slides" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="Images/team1.png">
+                <div class="carousel-caption">
+                    <h1 class="display-2">Pradėk kurti komandą čia! </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- Aprašas --}}
+
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top align-self-center" src="Images/brainstorm.png">
+                    <div class="card-body">
+                        <p class="text-center">Įsitrauk į komandą užpildydamas informaciją apie save savo profilyje</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top align-self-center" src="Images/brainstorm.png">
+                    <div class="card-body">
+                        <p class="text-center">Pažink savo komandos narius spręsdamas individualiai sugeneruotas viktorinas</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top align-self-center" src="Images/brainstorm.png">
+                    <div class="card-body">
+                        <p class="text-center">Stiprink tarpusavio ryšį žaisdamas virtualius komandos fromavimo žaidimus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="id" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div id="yea" class="carousel-item active">
+                <img id="HH" src="Images/HH.png">
+            </div>
+        </div>
+    </div>
+
+    {{-- Footeris --}}
+
+    <footer>
+        <div class="container-fluid padding">
+            <div class="text" id="text">
+                <p>©2022 | COVID PAKIRSTI</p>
+            </div>
+        </div>
+    </footer>
+
+    {{-- @section('content')
     <div class="flex-none">
         <div class="w-8/12 bg-white p-6 rounded-lg">
             <div class="Header">
@@ -32,6 +126,6 @@
             @extends('layouts.footer')
         </div>
     </div>
-@endsection
+    @endsection --}}
 </body>
 </html>
