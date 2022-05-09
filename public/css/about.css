@@ -1,4 +1,74 @@
-*{
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+
+html,body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins';
+}
+.navbar{
+  padding: .8rem;
+  background-image: linear-gradient(to left, #4568dc,#b06ab3);
+}
+.navbar-nav li{
+  padding-right: 20px;
+}
+.nav-link{
+  font-size: 1.1em !important;
+}
+.carousel-inner img{
+    width: 100%;
+    height: 220px;
+}
+.carousel-caption{
+    position: absolute;
+}
+.carousel-caption h1{
+    font-size: 400%;
+    text-shadow: 1px 1px 10px #000;
+}
+.container{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+p{
+    font-size: 20px;
+}
+footer{
+    background-color: #3f3f3f;
+    color: #d5d5d5;
+    height: 62px;
+    text-align: center;
+    padding-top: 15px;
+}
+
+@media (max-width: 992px) {
+    .carousel-inner img{
+      width: 100%;
+      height: 320px;
+    }
+  }
+  @media (max-width: 768px) {
+    .carousel-inner img{
+      width: 100%;
+      height: 350px;
+    }
+    .carousel-caption h1{
+      font-size: 300%;
+      text-shadow: 1px 1px 10px #000;
+    }
+    #HH{
+      height: 200px;
+      width: 560px;
+    }
+  }
+  @media (max-width: 576px) {
+    #HH{
+      height: 125px;
+      width: 350px;
+    }
+  }
+
+/* *{
     text-decoration: none;
 }
 .Fixed{
@@ -109,4 +179,4 @@
     position: absolute;
     top: 470px;
     left: 52%;
-}
+} */

@@ -1,16 +1,133 @@
 <!DOCTYPE html>
 <html >
 <head>
-    @extends('layouts.header')
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <title>Uniteam</title>
     <link rel="stylesheet" href="{{ asset('css/registracija.css') }}">
 </head>
 <body>
-    @section('content')
-    <div class="flex justify-center">
+    {{-- Navbar --}}
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="Images/TEAM.png" style="width: 255px; height: 109px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Pagrindinis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Žaidimai</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('posts') }}">Komandos</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{{ route('admin') }}">Narių sąrašas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="" style="font-style: italic;">{{ auth()->user()->nickname }}</a>
+                    </li>
+                    {{-- <form action="{{ route('user.update', auth()->id()) }}" method="get">
+                        @csrf
+                        <button type="submit" class="User">
+                            Profilis
+                        </button>
+                    </form> --}}
+                    <form action="{{ route('logout') }}" method="post">
+                        @csrf
+                        <button type="submit" class="nav-link" style="background: none; border: 0;">ATSIJUNGTI</button>
+                    </form>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8 main-section">
+            <div class="modal-content">
+                <form class="col-12" action="{{ route('register') }}" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" class="form-control @error('name') border-red-500 @enderror" value="{{ old('name') }}" placeholder="Naudotojo vardas">
+
+                        @error('name')
+                            <div>
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="subname" id="subname" class="form-control @error('subname') border-red-500 @enderror" value="{{ old('subname') }}" placeholder="Naudotojo pavardė">
+
+                        @error('subname')
+                            <div>
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="nickname" id="nickname" class="form-control @error('nickname') border-red-500 @enderror" value="{{ old('nickname') }}" placeholder="Naudotojo slapyvardis">
+
+                        @error('nickname')
+                            <div>
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" id="email" class="form-control @error('email') border-red-500 @enderror" value="{{ old('email') }}" placeholder="El. paštas">
+
+                        @error('email')
+                            <div>
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control @error('password') border-red-500 @enderror" value="" placeholder="Slaptažodis">
+
+                        @error('password')
+                            <div>
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password_confirmation" id="password_confirmation" class="form-control @error('password_confirmation') border-red-500 @enderror" value="" placeholder="Pakartoti slaptažodį">
+
+                        @error('password_confirmation')
+                            <div>
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
+                    <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Registruoti</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    {{-- Footeris --}}
+
+    <footer>
+        <div class="container-fluid padding">
+            <div class="text" id="text">
+                <p>©2022 | COVID PAKIRSTI</p>
+            </div>
+        </div>
+    </footer>
+
+    {{-- <div class="flex justify-center">
         <div class="w-4/12 bg-white p-6 rounded-lg">
             <form action="{{ route('register') }}" method="post">
                 <div class="Info1">
@@ -84,7 +201,6 @@
                 </div>
             </form>
         </div>
-    </div>
-@endsection
+    </div> --}}
 </body>
 </html>
