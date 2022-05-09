@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     {{-- <link rel="stylesheet" href="{{ asset('css/home.css') }}"> --}}
-    <title>Uniteam</title>
+    <title>UNITEAM</title>
 
     
 </head>
@@ -31,12 +31,46 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Žaidimai</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Apie mus</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}" ><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;">Prisijungti</a>
-                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('posts') }}">Komandos</a>
+                        </li>
+                    @endauth
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('about') }}">Apie mus</a>
+                        </li>
+                    @endguest
+                    @auth
+                        @if (auth()->user()->ulevel == 1)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin') }}">Narių sąrašas</a>
+                        </li>
+                        @endif
+                    @endauth
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="" style="font-style: italic;">{{ auth()->user()->nickname }}</a>
+                        </li>
+                        
+                        {{-- <form action="{{ route('user.update', auth()->id()) }}" method="get">
+                            @csrf
+                            <button type="submit" class="User">
+                                Profilis
+                            </button>
+                        </form> --}}
+
+                        <form action="{{ route('logout') }}" method="post">
+                            @csrf
+                            <button type="submit" class="nav-link" style="background: none; border: 0;">ATSIJUNGTI</button>
+                        </form>
+                    @endauth
+
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}" ><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;">Prisijungti</a>
+                        </li>
+                    @endguest
                 </ul>
             </div>
         </div>
