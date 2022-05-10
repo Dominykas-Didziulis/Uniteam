@@ -11,6 +11,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\Auths\RegisterController;
+use App\Http\Controllers\UserFormController;
 use App\Http\Controllers\UserProfileController;
 use App\Models\Form;
 
@@ -55,8 +56,8 @@ Route::get('/teams',[TeamController::class,'show'])->name('teams');
 Route::get('/userForm', function(){
     return view('userForm');
 });
-Route::post('/userForm', function(){
-    Form::create([
+/*Route::post('/userForm', function(Request $request){
+    /*Form::create([
         'vardas' => request('vardas'),
         'pavarde' => request('pavarde'),
         'el_Pastas' => request('el_Pastas'),
@@ -70,6 +71,23 @@ Route::post('/userForm', function(){
         'didziausia_Baime' => request('didziausia_Baime'),
         'salis_Aplankyti' => request('salis_Aplankyti'),
         'kreiptis_galima' => request('kreiptis_galima'),
-    ]);
+    ]);*/
+   /* $form = new Form;
+    $form->vardas = $request->input('vardas');
+    $form->pavarde = $request->input('pavarde');
+    $form->el_Pastas = $request->input('el_Pastas');
+    $form->gimimo_Data = $request->input('gimimo_Data');
+    $form->gimimo_Miestas = $request->input('gimimo_Miestas');
+    $form->trys_Zodziai = $request->input('trys_Zodziai');
+    $form->pomegiai = $request->input('pomegiai');
+    $form->auto_Marke = $request->input('auto_Marke');
+    $form->muzikos_Zanras = $request->input('muzikos_Zanras');
+    $form->filmas = $request->input('filmas');
+    $form->didziausia_Baime = $request->input('didziausia_Baime');
+    $form->salis_Aplankyti = $request->input('salis_Aplankyti');
+    $form->kreiptis_galima = $request->input('kreiptis_galima');
+
     return redirect('userForm');
-});
+});*/
+//Route::get('/userForm', [UserFormController::class, 'index'])->name('userForm');
+Route::post('/userForm', [UserFormController::class, 'store']);

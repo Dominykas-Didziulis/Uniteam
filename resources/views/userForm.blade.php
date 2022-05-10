@@ -1,5 +1,5 @@
 <form action="/userForm" method="POST">
-    
+    @csrf
     <label for="vardas">Vardas:</label>
     <input type="text" name="vardas"></br>
     <label for="pavarde">Pavardė:</label>
