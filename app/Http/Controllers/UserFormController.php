@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Form;
+use App\Models\UserForm;
 
 class UserFormController extends Controller
 {   
@@ -46,20 +46,21 @@ class UserFormController extends Controller
 */    
 
         
-        Form::create([
-            'vardas' => request('vardas'),
-            'pavarde' => request('pavarde'),
-            'el_Pastas' => request('el_Pastas'),
-            'gimimo_Data' => request('gimimo_Data'),
-            'gimimo_Miestas' => request('gimimo_Miestas'),
-            'trys_Zodziai' => request('trys_Zodziai'),
-            'pomegiai' => request('pomegiai'),
-            'auto_Marke' => request('auto_Marke'),
-            'muzikos_Zanras' => request('muzikos_Zanras'),
-            'filmas' => request('filmas'),
-            'didziausia_Baime' => request('didziausia_Baime'),
-            'salis_Aplankyti' => request('salis_Aplankyti'),
-            'kreiptis_galima' => request('kreiptis_galima')
+        UserForm::create([
+            'user_id' => auth()->user()->id,
+            'vardas' => $request->vardas,
+            'pavarde' => $request->pavarde,
+            'el_Pastas' => $request->el_Pastas,
+            'gimimo_Data' => $request->gimimo_Data,
+            'gimimo_Miestas' => $request->gimimo_Miestas,
+            'trys_Zodziai' => $request->trys_Zodziai,
+            'pomegiai' => $request->pomegiai,
+            'auto_Marke' => $request->auto_Marke,
+            'muzikos_Zanras' => $request->muzikos_Zanras,
+            'filmas' => $request->filmas,
+            'didziausia_Baime' => $request->didziausia_Baime,
+            'salis_Aplankyti' => $request->salis_Aplankyti,
+            'kreiptis_galima' => $request->kreiptis_galima
         ]);
 
         return redirect('userForm');

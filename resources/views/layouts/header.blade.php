@@ -60,9 +60,10 @@
                     @endif                    
                     @endauth
                     @auth
-                        <a href="" class="Dash">|</a>
-                        <a href="" class="ink">{{ auth()->user()->nickname }}</a>
-                        
+                        <a href="" class="Dash">|</a>pas jus serveris off
+
+                        <a href="{{ route('update') }}" class="Link"></a>
+                        ok ate
                        <form action="{{ route('user.update', auth()->id()) }}" method="get">
                             @csrf
                             <button type="submit" class="User">

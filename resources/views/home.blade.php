@@ -46,21 +46,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin') }}">Narių sąrašas</a>
                         </li>
+
+                       
+
                         @endif
                     @endauth
                     @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="" style="font-style: italic;">{{ auth()->user()->nickname }}</a>
-                        </li>
-                        
-                        {{-- <form action="{{ route('user.update', auth()->id()) }}" method="get">
+                    <form action="{{ route('user.update', auth()->id()) }}" method="get">
                             @csrf
                             <button type="submit" class="User">
-                                Profilis
+                                test
                             </button>
-                        </form> --}}
+                        </form>
 
-                        <form action="{{ route('logout') }}" method="post">
+
+                        <form action="{{ route('logout', auth()->user()->id) }}" method="post">
                             @csrf
                             <button type="submit" class="nav-link" style="background: none; border: 0;">ATSIJUNGTI</button>
                         </form>

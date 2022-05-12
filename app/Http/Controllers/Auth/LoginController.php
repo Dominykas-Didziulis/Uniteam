@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['guest']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware(['guest']);
+    // }
     
     public function index()
     {
@@ -32,9 +32,11 @@ class LoginController extends Controller
 
         return redirect()->route('home');
     }
+
     public function getUsersCredentials(Request $request)
     {
-        $user=User::find($request->user()->id);
+
+        $user=User::find(auth()->user()->id);
         return view('auth.update', ['user'=>$user]);
     }
     public function setUsersCredentials(Request $request)

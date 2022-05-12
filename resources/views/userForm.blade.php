@@ -41,7 +41,7 @@
     <input type="text" name="salis_Aplankyti"></br>
     <label for="kreiptis_galima">Į mane kreiptis galima dėl:</label>
     <input type="data" name="kreiptis_galima"></br>
-    <button type="submit" class="btn"><i class="fas fa-sign-in-alt">Išsaugoti</button>
+    <button type="submit" class="btn">Išsaugoti</button>
 </form>
 </body>
 </html>
