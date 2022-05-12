@@ -7,7 +7,10 @@ use App\Models\Form;
 
 class UserFormController extends Controller
 {   
-
+    public function index()
+    {
+        return view('userForm');
+    }
     public function store(Request $request)
     {
         $this->validate($request, [
@@ -26,7 +29,7 @@ class UserFormController extends Controller
             'kreiptis_galima' => 'required|max:255',
         ]);
 
-        $form = new Form;
+       /* $form = new Form;
         $form->vardas = $request->input('vardas');
         $form->pavarde = $request->input('pavarde');
         $form->el_Pastas = $request->input('el_Pastas');
@@ -40,9 +43,11 @@ class UserFormController extends Controller
         $form->didziausia_Baime = $request->input('didziausia_Baime');
         $form->salis_Aplankyti = $request->input('salis_Aplankyti');
         $form->kreiptis_galima = $request->input('kreiptis_galima');
+/*
         
+
         
-        /*Form::create([
+        Form::create([
             'vardas' => request('vardas'),
             'pavarde' => request('pavarde'),
             'el_Pastas' => request('el_Pastas'),
@@ -56,7 +61,7 @@ class UserFormController extends Controller
             'didziausia_Baime' => request('didziausia_Baime'),
             'salis_Aplankyti' => request('salis_Aplankyti'),
             'kreiptis_galima' => request('kreiptis_galima')
-        ]);*/
+        ]);
 
         return redirect('userForm');
     }
