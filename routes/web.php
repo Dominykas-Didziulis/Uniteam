@@ -49,50 +49,14 @@ Route::post('edit',[AdminController::class,'UpdateRole']);
 
 Route::get('/about', function () {return view('about');})->name('about');
 
+Route::get('/atspek', function () {return view('guesswho');})->name('guesswho');
+
 Route::get('/teams',[TeamController::class,'show'])->name('teams');
 //Route::get('edit/{id}',[TeamController::class,'editRole']);
 //Route::post('edit',[TeamController::class,'UpdateRole']);
 
-<<<<<<< Updated upstream
-Route::get('/userForm', function(){
-    return view('userForm');
-});
-/*Route::post('/userForm', function(Request $request){
-    /*Form::create([
-        'vardas' => request('vardas'),
-        'pavarde' => request('pavarde'),
-        'el_Pastas' => request('el_Pastas'),
-        'gimimo_Data' => request('gimimo_Data'),
-        'gimimo_Miestas' => request('gimimo_Miestas'),
-        'trys_Zodziai' => request('trys_Zodziai'),
-        'pomegiai' => request('pomegiai'),
-        'auto_Marke' => request('auto_Marke'),
-        'muzikos_Zanras' => request('muzikos_Zanras'),
-        'filmas' => request('filmas'),
-        'didziausia_Baime' => request('didziausia_Baime'),
-        'salis_Aplankyti' => request('salis_Aplankyti'),
-        'kreiptis_galima' => request('kreiptis_galima'),
-    ]);*/
-   /* $form = new Form;
-    $form->vardas = $request->input('vardas');
-    $form->pavarde = $request->input('pavarde');
-    $form->el_Pastas = $request->input('el_Pastas');
-    $form->gimimo_Data = $request->input('gimimo_Data');
-    $form->gimimo_Miestas = $request->input('gimimo_Miestas');
-    $form->trys_Zodziai = $request->input('trys_Zodziai');
-    $form->pomegiai = $request->input('pomegiai');
-    $form->auto_Marke = $request->input('auto_Marke');
-    $form->muzikos_Zanras = $request->input('muzikos_Zanras');
-    $form->filmas = $request->input('filmas');
-    $form->didziausia_Baime = $request->input('didziausia_Baime');
-    $form->salis_Aplankyti = $request->input('salis_Aplankyti');
-    $form->kreiptis_galima = $request->input('kreiptis_galima');
 
-    return redirect('userForm');
-});*/
-//Route::get('/userForm', [UserFormController::class, 'index'])->name('userForm');
-Route::post('/userForm', [UserFormController::class, 'store']);
-=======
+
 Route::get('/userForm', [UserFormController::class, 'index'])->name('userForm');
 Route::post('/userForm', [UserFormController::class, 'store']);
->>>>>>> Stashed changes
+
