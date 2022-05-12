@@ -30,7 +30,7 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
 Route::get('/update',[LoginController::class,'getUsersCredentials'])->name('user.update'); 
-//Route::post('/login/update',[LoginController::class,'setUsersCredentials']);
+Route::post('/update',[LoginController::class,'setUsersCredentials']);
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');

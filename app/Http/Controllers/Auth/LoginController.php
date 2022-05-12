@@ -58,6 +58,7 @@ class LoginController extends Controller
         $user=User::find($request->user()->id);
         
         $user->name=$request->name;
+        $user->subname=$request->subname;
         $user->nickname=$request->nickname;
         $user->email=$request->email;
         if($request->password != null)
