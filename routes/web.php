@@ -10,7 +10,7 @@ use App\Http\Controllers\UserPostController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TeamController;
-use App\Http\Controllers\Auths\RegisterController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserFormController;
 use App\Http\Controllers\UserProfileController;
 use App\Models\Form;
