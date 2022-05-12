@@ -53,6 +53,7 @@ Route::get('/teams',[TeamController::class,'show'])->name('teams');
 //Route::get('edit/{id}',[TeamController::class,'editRole']);
 //Route::post('edit',[TeamController::class,'UpdateRole']);
 
+<<<<<<< Updated upstream
 Route::get('/userForm', function(){
     return view('userForm');
 });
@@ -91,3 +92,7 @@ Route::get('/userForm', function(){
 });*/
 //Route::get('/userForm', [UserFormController::class, 'index'])->name('userForm');
 Route::post('/userForm', [UserFormController::class, 'store']);
+=======
+Route::get('/userForm', [UserFormController::class, 'index'])->name('userForm');
+Route::post('/userForm', [UserFormController::class, 'store']);
+>>>>>>> Stashed changes
