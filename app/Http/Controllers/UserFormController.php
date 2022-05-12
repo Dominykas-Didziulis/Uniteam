@@ -43,8 +43,7 @@ class UserFormController extends Controller
         $form->didziausia_Baime = $request->input('didziausia_Baime');
         $form->salis_Aplankyti = $request->input('salis_Aplankyti');
         $form->kreiptis_galima = $request->input('kreiptis_galima');
-/*
-        
+*/    
 
         
         Form::create([
