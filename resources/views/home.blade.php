@@ -46,19 +46,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin') }}">Narių sąrašas</a>
                         </li>
-
-                       
+                      
 
                         @endif
                     @endauth
                     @auth
-                    <form action="{{ route('user.update', auth()->id()) }}" method="get">
-                            @csrf
-                            <button type="submit" class="User">
-                                test
-                            </button>
-                        </form>
 
+                    <a class="nav-link" href="{{ route('user.update', auth()->id()) }}">{{ auth()->user()->nickname }}</a>;
 
                         <form action="{{ route('logout', auth()->user()->id) }}" method="post">
                             @csrf
