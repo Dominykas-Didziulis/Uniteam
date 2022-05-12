@@ -49,6 +49,8 @@ Route::post('edit',[AdminController::class,'UpdateRole']);
 
 Route::get('/about', function () {return view('about');})->name('about');
 
+Route::get('/atspek', function () {return view('guesswho');})->name('guesswho');
+
 Route::get('/teams',[TeamController::class,'show'])->name('teams');
 //Route::get('edit/{id}',[TeamController::class,'editRole']);
 //Route::post('edit',[TeamController::class,'UpdateRole']);
