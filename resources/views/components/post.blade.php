@@ -29,6 +29,6 @@
             @endif
         @endauth
 
-        <span>{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count()) }}</span>
+        <span>{{ $post->likes->count() }} {{ Str::plural('patinka', $post->likes->count()) }}</span>
     </div>
 </div>
