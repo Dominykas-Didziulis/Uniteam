@@ -11,12 +11,12 @@
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.css">
     <script src="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.js"></script>
-    <title>Uniteam</title>
-    <link rel="stylesheet" href="{{ asset('css/post.css') }}">
+    <title>UNITEAM</title>
+    <link href="{{ URL::asset('css/profile.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body>
-     {{-- Navbar --}}
-     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+    {{-- Navbar --}}
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="/"><img src="Images/TEAM.png" style="width: 255px; height: 109px;"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
@@ -31,7 +31,7 @@
                         <a class="nav-link" href="/">Žaidimai</a>
                     </li>
                     @auth
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts') }}">Komandos</a>
                         </li>
                     @endauth
@@ -80,38 +80,70 @@
             </div>
         </div>
     </nav>
-    <div class="container ">
-        <div class="">
-            @auth
-                <form action="{{ route('posts') }}" method="post" class="mb-4">
-                    @csrf
-                    <div class="mb-4">
-                        <textarea name="body" id="body" cols="30" rows="4" class="form-control rounded-0 @error('body') border-red-500 @enderror" placeholder="Parašyk kažką!" rows="3"></textarea>
-
-                        @error('body')
-                            <div class="text-red-500 mt-2 text-sm">
-                                {{ $message }}
-                            </div>
-                        @enderror
-                    </div>
-
-                    <div>
-                        <button type="submit" class="mygtukas">Skelbti</button>
-                    </div>
-                </form>
-            @endauth
-            
-            @if ($posts->count())
-                @foreach ($posts as $post)
-                    <div class="post">
-                        <x-post :post="$post" />
-                    </div>
-                @endforeach
-
-                {{ $posts->links() }}
-            @else
-                <p>Nėra įrašų.</p>
-            @endif
+    <div class="float-right col-2">
+        <button class="redaguoti"><a class="a" href="userForm">Redaguoti</a></button>
+    </div>
+    <div class="container-fluid padding" id="container">
+        <div class="row text-center padding">
+            <div class="col-md-4">
+                <img src="Images/person.jpg">
+                <div class="form-group">
+                    <label for="name">Vardas</label><br>
+                    <input type="text" name="name" readonly="readonly" value="Petras">
+                </div>
+                <div class="form-group">
+                    <label for="surname">Pavardė</label><br>
+                    <input type="text" name="surname" readonly="readonly" value="Petraitis">
+                </div>
+                <div class="form-group">
+                    <label for="pastas">El. paštas</label><br>
+                    <input type="text" name="pastas" readonly="readonly" value="petraspetraitis@gmail.com">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="data">Gimimo data</label><br>
+                    <input type="text" name="data" readonly="readonly" value="1987-03-21">
+                </div>
+                <div class="form-group">
+                    <label for="city">Gimtasis miestas</label><br>
+                    <input type="text" name="city" readonly="readonly" value="Kaunas">
+                </div>
+                <div class="form-group">
+                    <label for="words">Trys žodžiai geriausiai apibūdinantys mane</label><br>
+                    <input type="text" name="words" readonly="readonly" value="Draugiškas, atsakingas, protingas">
+                </div>
+                <div class="form-group">
+                    <label for="pomegiai">Pomėgiai</label><br>
+                    <input type="text" name="pomegiai" readonly="readonly" value="Žvejyba, futbolas, azartiniai žaidimai">
+                </div>
+                <div class="form-group">
+                    <label for="car">Vairuojamo automobilio markė</label><br>
+                    <input type="text" name="car" readonly="readonly" value="Mercedes">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="music">Mėgstamiausias muzikos žanras</label><br>
+                    <input type="text" name="music" readonly="readonly" value="Rokas">
+                </div>
+                <div class="form-group">
+                    <label for="movie">Geriausias matytas filmas</label><br>
+                    <input type="text" name="movie" readonly="readonly" value="Krikštatėvis">
+                </div>
+                <div class="form-group">
+                    <label for="fear">Didžiausia baimė</label><br>
+                    <input type="text" name="fear" readonly="readonly" value="Uždaros patalpos">
+                </div>
+                <div class="form-group">
+                    <label for="country">Šalis, kurią norėčiau aplankyti</label><br>
+                    <input type="text" name="country" readonly="readonly" value="Tailandas">
+                </div>
+                <div class="form-group">
+                    <label for="use">Į mane galima kreiptis dėl...</label><br>
+                    <input type="text" name="use" readonly="readonly" value="Renginių organizavimo įdėjų">
+                </div>
+            </div>
         </div>
     </div>
 </body>

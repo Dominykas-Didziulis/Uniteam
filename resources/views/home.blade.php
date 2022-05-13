@@ -46,13 +46,24 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin') }}">Narių sąrašas</a>
                         </li>
+                      
+
                         @endif
                     @endauth
                     @auth
-                        <li class="nav-item">
-                            <a class="nav-link" href="" style="font-style: italic;">{{ auth()->user()->nickname }}</a>
-                        </li>
+                        {{-- <li class="nav-item">
+                            <a class="nav-link" href="profile" style="font-style: italic;">{{ auth()->user()->nickname }}</a>
+                        </li> --}}
                         
+                        <li class="nav-item">
+                            <li class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  style="background: none; border: 0">{{ auth()->user()->nickname }}<span class="caret"></span></button>
+                                <ul class="dropdown-menu" style="background-color: rgb(44, 49, 99)">
+                                    <li><a class="nav-link" href="profile">Profilis</a></li>
+                                    <li><a class="nav-link" href="{{ route('user.update', auth()->id()) }}">Informacijos keitimas</a></li>
+                                  </ul>
+                            </li>
+                        </li>
                         {{-- <form action="{{ route('user.update', auth()->id()) }}" method="get">
                             @csrf
                             <button type="submit" class="User">
@@ -60,7 +71,9 @@
                             </button>
                         </form> --}}
 
-                        <form action="{{ route('logout') }}" method="post">
+                        {{-- <a class="nav-link" href="{{ route('user.update', auth()->id()) }}">{{ auth()->user()->nickname }}</a>; --}}
+
+                        <form action="{{ route('logout', auth()->user()->id) }}" method="post">
                             @csrf
                             <button type="submit" class="nav-link" style="background: none; border: 0;">ATSIJUNGTI</button>
                         </form>

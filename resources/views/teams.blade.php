@@ -9,8 +9,7 @@
     @extends('layouts.header')
 </head>
 <body>  
-
-    @section('content')    
+   
     <table class="Lentele" cellspacing="0">
      
         <tr>
@@ -30,6 +29,5 @@
     
        
     </table>
-    @endsection
 </body>
 </html>

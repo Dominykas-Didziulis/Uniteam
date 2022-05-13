@@ -1,0 +1,30 @@
+.pranesimas{
+    font-size: 28px;
+}
+.istrinti{
+    margin-bottom: 7px;
+    background-color: rgb(197, 91, 91);
+    border: 0;
+    border-radius: 5px;
+    color: white;
+    width: 100px;
+    height: 30px;
+}
+.patinka{
+    background-color: #4568dc;
+    color: white;
+    width: 130px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+.nepatinka{
+    background-color: #4568dc;
+    color: white;
+    width: 130px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}

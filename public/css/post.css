@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,700');
+*{
+    text-decoration: none;
+}
+html,body{
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins';
+}
+.navbar{
+  padding: .8rem;
+  background-image: linear-gradient(to left, #4568dc,#b06ab3);
+}
+.navbar-nav li{
+  padding-right: 20px;
+}
+.nav-link{
+  font-size: 1.1em !important;
+}
+.container{
+    margin-top: 30px;
+    text-align: center;
+    width: 500px;
+}
+.post{
+    background-color: rgb(225, 209, 255);
+}
+.mygtukas{
+    background-color: #4568dc;
+    border: 0;
+    border-radius: 5px;
+    width: 100px;
+    height: 35px;
+    color: white;
+}

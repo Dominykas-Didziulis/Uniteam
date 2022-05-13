@@ -1,6 +1,5 @@
-@if ( auth()->user()->ulevel == 1)
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,7 @@
     <link rel="stylesheet" href="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.css">
     <script src="https://unpkg.com/bootstrap-table@1.20.0/dist/bootstrap-table.min.js"></script>
     <title>Uniteam</title>
-    <link href="{{ URL::asset('css/admin.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ URL::asset('css/addTeam.css') }}" rel="stylesheet" type="text/css" >
 </head>
 <body>
     {{-- Navbar --}}
@@ -67,87 +66,21 @@
             </div>
         </div>
     </nav>
-    <div class="float-right col-4">
-        <form action="{{ route('register') }}" method="get">
-            <input type='hidden' name='staffId' id='staffId' value='$staffId'> 
-            <input type='submit' name='submit' id='submit' value='Naujo naudotojo registracija' class='submit'>
-        </form>
-    </div>
-    <div class="float-right col-4">
-        <form action="teams" method="get">
-            <input type='hidden' name='staffId' id='staffId' value='$staffId'> 
-            <input type='submit' name='submit' id='submit' value='Sukurti nauja komanda' class='submit'>
-        </form>
-    </div>
-    <div class="container">
-        <table class="table table-bordered table-hover">
-            <tr>
-            <th scope="col" class="">
-                Vardas
-            </th>
-            <th scope="col" class="">
-                Pavardė
-            </th>
-            <th scope="col" class="Pastas">
-                El. paštas
-            </th>
-            <th scope="col" class="">
-                Slapyvardis
-            </th>
-            <th scope="col" class="">
-                Rolė
-            </th>
-            <th scope="col" class="Red">
-                Redagavimas
-            </th>
-            </tr>
-        
-            @foreach($users as $user)
-            <tr>
-            <td scope="col" class="">
-                {{ $user['name']}}
-            </td>
-            <td scope="col" class="">
-                {{ $user['subname']}}
-            </td>
-            <td scope="col" class="">
-                {{ $user['email']}}
-            </td>
-            <td scope="col" class="">
-                {{ $user['nickname']}}
-            </td>
-            <td scope="col" class="">
-                <?php if( $user['ulevel'] == 1){
-                    echo ("Administratorius");
-                }
-                elseif ( $user['ulevel'] == 2) { 
-                    echo ("Komandos vadovas");
-                }
-                elseif ($user['ulevel'] == 3) {  
-                    echo ("Komandos narys");
-                }
-                else {
-                    echo ("Nenustatyta");
-                }  
-                ?>  
-            </td>
-            <td class="cell">
-                <button class="Redg"><a href={{"editrole/".$user['id']}} class="yea">Redaguoti</a></button>
-            </td>
-            </tr>
-        
-            @endforeach
-        </table>
-    </div>
-    {{-- Footeris --}}
-
-    <footer>
-        <div class="container-fluid padding">
-            <div class="text" id="text">
-                <p>©2022 | COVID PAKIRSTI</p>
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8 main-section">
+            <div class="modal-content">
+                <form class="col-12" action="submit" method="post">
+                    @csrf
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Komandos pavadinimas">
+                    </div>
+                    
+                    <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Kurti</button>
+                </form>
             </div>
         </div>
-    </footer>
+    </div>
+    
+</div>
 </body>
 </html>
-@endif
