@@ -35,7 +35,13 @@
                         <a class="nav-link" href="{{ route('admin') }}">Narių sąrašas</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="" style="font-style: italic;">{{ auth()->user()->nickname }}</a>
+                        <li class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  style="background: none; border: 0">{{ auth()->user()->nickname }}<span class="caret"></span></button>
+                            <ul class="dropdown-menu" style="background-color: rgb(44, 49, 99)">
+                                <li><a class="nav-link" href="profile">Profilis</a></li>
+                                <li><a class="nav-link" href="{{ route('user.update', auth()->id()) }}">Informacijos keitimas</a></li>
+                              </ul>
+                        </li>
                     </li>
                     {{-- <form action="{{ route('user.update', auth()->id()) }}" method="get">
                         @csrf

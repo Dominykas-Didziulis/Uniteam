@@ -13,35 +13,126 @@
     <link rel="stylesheet" href="{{ asset('css/registracija.css') }}">
 </head>
 <body>
-<form action="/userForm" method="POST">
-    @csrf
-    <label for="vardas">Vardas:</label>
-    <input type="text" name="vardas"></br>
-    <label for="pavarde">Pavardė:</label>
-    <input type="text" name="pavarde"></br>
-    <label for="el_Pastas">Elektroninis paštas:</label>
-    <input type="text" name="el_Pastas"></br>
-    <label for="gimimo_Data">Gimimo data:</label>
-    <input type="data" name="gimimo_Data"></br>
-    <label for="gimimo_Miestas">Miestas kuriame gimiau:</label>
-    <input type="text" name="gimimo_Miestas"></br>
-    <label for="trys_Zodziai">Trys žodžiai apibūdinantys mane:</label>
-    <input type="text" name="trys_Zodziai"></br>
-    <label for="pomegiai">Mano pomėgiai:</label>
-    <input type="text" name="pomegiai"></br>
-    <label for="auto_Marke">Mano vairuojamo automobilio markė:</label>
-    <input type="text" name="auto_Marke"></br>
-    <label for="muzikos_Zanras">Mano mėgstamiausias muzikos žanras:</label>
-    <input type="text" name="muzikos_Zanras"></br>
-    <label for="filmas">Mėgstamiausias filmas:</label>
-    <input type="text" name="filmas"></br>
-    <label for="didziausia_Baime">Didžiausia baimė yra:</label>
-    <input type="text" name="didziausia_Baime"></br>
-    <label for="salis_Aplankyti">Šalis kurią norėčiau labiausiai aplankyti:</label>
-    <input type="text" name="salis_Aplankyti"></br>
-    <label for="kreiptis_galima">Į mane kreiptis galima dėl:</label>
-    <input type="data" name="kreiptis_galima"></br>
-    <button type="submit" class="btn">Išsaugoti</button>
-</form>
+    <nav class="navbar navbar-expand-md navbar-dark sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"><img src="Images/TEAM.png" style="width: 255px; height: 109px;"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/">Pagrindinis</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Žaidimai</a>
+                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('posts') }}">Komandos</a>
+                        </li>
+                    @endauth
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('about') }}">Apie mus</a>
+                        </li>
+                    @endguest
+                    @auth
+                        @if (auth()->user()->ulevel == 1)
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('admin') }}">Narių sąrašas</a>
+                        </li>
+                        @endif
+                    @endauth
+                    @auth
+                    <li class="nav-item">
+                        <li class="dropdown">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  style="background: none; border: 0">{{ auth()->user()->nickname }}<span class="caret"></span></button>
+                            <ul class="dropdown-menu" style="background-color: rgb(44, 49, 99)">
+                                <li><a class="nav-link" href="profile">Profilis</a></li>
+                                <li><a class="nav-link" href="{{ route('user.update', auth()->id()) }}">Informacijos keitimas</a></li>
+                              </ul>
+                        </li>
+                    </li>
+
+
+                        <form action="{{ route('logout', auth()->user()->id) }}" method="post">
+                            @csrf
+                            <button type="submit" class="nav-link" style="background: none; border: 0;">ATSIJUNGTI</button>
+                        </form>
+                    @endauth
+
+                    @guest
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}" ><img src="Images/add.png" alt="Add user" style="height: 20px; width: 20px;">Prisijungti</a>
+                        </li>
+                    @endguest
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="modal-dialog text-center">
+        <div class="col-sm-8 main-section">
+            <div class="modal-content">
+                <form class="col-12" action="/userForm" method="POST">
+                    @csrf
+                    <div class="form-group">
+                        <label for="vardas" class="Vardas float-left">Vardas:</label>
+                        <input type="text" name="vardas" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="pavarde" class="float-left">Pavardė:</label>
+                        <input type="text" name="pavarde" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="el_Pastas" class="float-left">Elektroninis paštas:</label>
+                        <input type="text" name="el_Pastas" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="gimimo_Data" class="float-left">Gimimo data:</label>
+                        <input type="text" name="gimimo_Data" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="gimimo_Miestas" class="float-left">Miestas kuriame gimiau:</label>
+                        <input type="text" name="gimimo_Miestas" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="trys_Zodziai" class="float-left">Trys žodžiai apibūdinantys mane:</label>
+                        <input type="text" name="trys_Zodziai" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="pomegiai" class="float-left">Mano pomėgiai:</label>
+                        <input type="text" name="pomegiai" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="auto_Marke" class="float-left">Mano vairuojamo automobilio markė:</label>
+                        <input type="text" name="auto_Marke" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="muzikos_Zanras" class="float-left">Mano mėgstamiausias muzikos žanras:</label>
+                        <input type="text" name="muzikos_Zanras" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="filmas" class="float-left">Mėgstamiausias filmas:</label>
+                        <input type="text" name="filmas" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="didziausia_Baime" class="float-left">Didžiausia baimė yra:</label>
+                        <input type="text" name="didziausia_Baime" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="salis_Aplankyti" class="float-left">Šalis kurią norėčiau labiausiai aplankyti:</label>
+                        <input type="text" name="salis_Aplankyti" class="form-control"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="kreiptis_galima" class="float-left">Į mane kreiptis galima dėl:</label>
+                        <input type="text" name="kreiptis_galima" class="form-control"> 
+                    </div>
+                    <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Išsaugoti</button>
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

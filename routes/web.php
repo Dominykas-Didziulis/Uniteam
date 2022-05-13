@@ -14,6 +14,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserFormController;
 use App\Http\Controllers\UserProfileController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\addTeam;
 
 Route::get('/', [HomeController::class,'index'] )->name('home');//todo change to controller mby will work. Kieno cia ideja ?
 
@@ -57,3 +58,11 @@ Route::get('/teams',[TeamController::class,'show'])->name('teams');
 Route::get('/userForm', [UserFormController::class, 'index'])->name('userForm');
 Route::post('/userForm', [UserFormController::class, 'store']);
 
+Route::get('/creatTeam', function () {
+    return view('creatTeam');
+});
+Route::get('/profile', function () {
+    return view('profile');
+});
+Route::view('teams', 'addTeam');
+Route::post('/submit', [addTeam::class, 'save']);
