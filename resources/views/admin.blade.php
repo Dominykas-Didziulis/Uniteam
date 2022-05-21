@@ -76,7 +76,7 @@
     <div class="float-right col-4">
         <form action="teams" method="get">
             <input type='hidden' name='staffId' id='staffId' value='$staffId'> 
-            <input type='submit' name='submit' id='submit' value='Sukurti nauja komanda' class='submit'>
+            <input type='submit' name='submit' id='submit' value='Sukurti naują komandą' class='submit'>
         </form>
     </div>
     <div class="container">

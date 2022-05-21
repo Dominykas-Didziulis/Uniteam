@@ -2,7 +2,7 @@
 <link rel="stylesheet" href="{{ asset('css/text.css') }}">
 <div class="mb-4">
     {{-- <a href="{{ route('users.posts', $post->user) }}" class="font-bold">{{ $post->user->name }}</a> <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span> --}}
-    <p>{{ $post->user->name }}  <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span></p>
+    <p>{{ $post->user->name }}  <span class="text-gray-600 text-sm">{{ $post->created_at; }}</span></p>
 
     <p class="pranesimas">{{ $post->body }}</p>
 
@@ -29,6 +29,6 @@
             @endif
         @endauth
 
-        <span>{{ $post->likes->count() }} {{ Str::plural('patinka', $post->likes->count()) }}</span>
+        <span>{{ $post->likes->count() }} {{ 'patinka', $post->likes->count() }}</span>
     </div>
 </div>
