@@ -26,6 +26,7 @@ class UserProfileController extends Controller
         $data->email=$req->email;
         $data->nickname=$req->nickname;
         $data->ulevel=$req->ulevel;
+        $data->team_id=$req->team_id;
         $data->save();
         return redirect('admin');
     }

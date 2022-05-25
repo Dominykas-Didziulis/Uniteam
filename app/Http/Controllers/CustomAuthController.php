@@ -37,6 +37,7 @@ class CustomAuthController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->ulevel = "3";
+        $data->team_id=$req->team_id;
         $res = $user->save();
         
         if($res){
@@ -82,6 +83,7 @@ class CustomAuthController extends Controller
         $data->email=$req->email;
         $data->nickname=$req->nickname;
         $data->ulevel=$req->ulevel;
+        $data->team_id=$req->team_id;
         $data->save();
         return redirect('user');
     }

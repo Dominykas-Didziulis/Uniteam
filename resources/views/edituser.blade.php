@@ -37,6 +37,22 @@
                 echo ("Nenustatyta");
             }  
             ?> </option>
+        <label for="team_id">Komanda</label><br>
+        {{-- <input type="text" name="team_id" value="{{$data['team_id']}}"><br><br> --}}
+        <select name="team_id" readonly="readonly">
+            <option value={{$data['team_id']}}><?php if( $data['team_id'] == 1){
+                echo ("Komanda nepriskirta");
+            }
+            elseif ( $data['team_id'] == 2) { 
+                echo ("Pirma komanda");
+            }
+            elseif ($data['team_id'] == 3) {  
+                echo ("Antra komanda");
+            }
+            else {
+                echo ("Trečia komanda");
+            }  
+            ?> </option>
 
         </select><br><br>
         <button type="submit" >Atnaujinti</button><br>

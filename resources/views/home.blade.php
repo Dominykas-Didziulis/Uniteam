@@ -28,10 +28,11 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Pagrindinis</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Žaidimai</a>
-                    </li>
                     @auth
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('game') }}">Žaidimai</a>
+                    </li>
+                    
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts') }}">Komandos</a>
                         </li>
