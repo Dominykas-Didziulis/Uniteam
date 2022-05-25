@@ -46,6 +46,7 @@ Route::get('editrole/{id}',[AdminController::class,'editRole']);
 Route::post('edit',[AdminController::class,'UpdateRole']);
 
 Route::get('/about', function () {return view('about');})->name('about');
+Route::get('/game', function () {return view('game');})->name('game');
 
 Route::get('/atspek', function () {return view('guesswho');})->name('guesswho');
 
