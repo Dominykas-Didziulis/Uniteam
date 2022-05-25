@@ -7,6 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {
-    protected $table = 'teams';
-    public $timestamps = false;
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'id',
+        'name',
+    ];
+    public function team()
+    {
+        return $this->belongsTo('teams');
+    }
 }
