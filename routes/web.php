@@ -10,14 +10,13 @@ use App\Http\Controllers\UserPostController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\TeamController;
-use App\Http\Controllers\Auths\RegisterController;
+use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\UserFormController;
 use App\Http\Controllers\UserProfileController;
-use App\Models\Form;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\addTeam;
 
-Route::get('/', function () {
-    return view('home');
-})->name('home');
+Route::get('/', [HomeController::class,'index'] )->name('home');//todo change to controller mby will work. Kieno cia ideja ?
 
 Route::get('/dashboard', [DashboardController::class, 'index'])
     ->name('dashboard');
@@ -31,9 +30,8 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
-Route::get('edit/{id}',[AdminController::class,'editRole']);
-Route::post('edit',[AdminController::class,'UpdateRole']);
-
+Route::get('/update',[LoginController::class,'getUsersCredentials'])->name('user.update'); 
+Route::post('/update',[LoginController::class,'setUsersCredentials']);
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
 Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
@@ -48,6 +46,7 @@ Route::get('editrole/{id}',[AdminController::class,'editRole']);
 Route::post('edit',[AdminController::class,'UpdateRole']);
 
 Route::get('/about', function () {return view('about');})->name('about');
+Route::get('/game', function () {return view('game');})->name('game');
 
 Route::get('/atspek', function () {return view('guesswho');})->name('guesswho');
 
@@ -60,3 +59,11 @@ Route::get('/teams',[TeamController::class,'show'])->name('teams');
 Route::get('/userForm', [UserFormController::class, 'index'])->name('userForm');
 Route::post('/userForm', [UserFormController::class, 'store']);
 
+Route::get('/creatTeam', function () {
+    return view('creatTeam');
+});
+Route::get('/profile', function () {
+    return view('profile');
+});
+Route::view('teams', 'addTeam');
+Route::post('/submit', [addTeam::class, 'save']);

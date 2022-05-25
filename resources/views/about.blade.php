@@ -26,7 +26,7 @@
                     </li>
 <<<<<<< Updated upstream
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Žaidimai</a>
+                        <a class="nav-link" href="{{ route('game') }}">Žaidimai</a>
                     </li>
 =======
                     

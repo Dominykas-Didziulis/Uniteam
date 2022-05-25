@@ -76,12 +76,7 @@
                     </div>
                     <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Prisijungti</button>
                 </form>
-                <div class="col-12 pagalba">
-                    <a href="">Pamiršote slaptažodį?</a>
-                </div>
-                <div class="col-12 pagalba">
-                    <a href="">Reikia pagalbos?</a>
-                </div>
+
             </div>
         </div>
     </div>

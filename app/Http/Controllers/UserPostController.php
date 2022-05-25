@@ -13,3 +13,4 @@ class UserPostController extends Controller
         return view('admin',['users'=>$data]);
     }
 }
+
