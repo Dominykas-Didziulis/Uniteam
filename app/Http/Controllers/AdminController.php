@@ -29,6 +29,8 @@ class AdminController extends Controller
         $data->email=$req->email;
         $data->nickname=$req->nickname;
         $data->ulevel=$req->ulevel;
+        $data->team_id=$req->team_id;
+        ///dd($req);
         $data->save();
         return redirect('admin');
     }

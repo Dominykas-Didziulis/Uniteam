@@ -24,9 +24,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/">Pagrindinis</a>
                     </li>
+<<<<<<< Updated upstream
                     <li class="nav-item">
                         <a class="nav-link" href="/">Žaidimai</a>
                     </li>
+=======
+                    
+>>>>>>> Stashed changes
                     <li class="nav-item active">
                         <a class="nav-link" href="{{ route('about') }}">Apie mus</a>
                     </li>

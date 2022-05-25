@@ -95,6 +95,27 @@
                             <option value="3">Komandos narys</option>
                         </select><br><br>
                     </div>
+                    <div class="form-group">
+                        <label for="team_id">Komanda</label><br>
+                        <select name="team_id">
+                            <option value={{$data['team_id']}}><?php if( $data['team_id'] == 1){
+                                echo ("Komanda nepriskirta");
+                            }
+                            elseif ( $data['team_id'] == 2) { 
+                                echo ("Pirma komanda");
+                            }
+                            elseif ($data['team_id'] == 3) {  
+                                echo ("Antra komanda");
+                            }
+                            else {
+                                echo ("Trečia komanda");
+                            }  
+                            ?> </option>
+                            <option value="1">Komanda nepriskirta</option>
+                            <option value="2">Pirma komanda</option>
+                            <option value="3">Antra komanda</option>
+                        </select><br><br>
+                    </div>
                     <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Atnaujinti</button>
                 </form>
             </div>
@@ -140,6 +161,24 @@
                 <option value="1">Administratorius</option>
                 <option value="2">Komandos vadovas</option>
                 <option value="3">Komandos narys</option>
+            </select><br>
+            <select name="team_id">
+                <option value={{$data['team_id']}}><?php if( $data['team_id'] == 1){
+                    echo ("Komanda nepriskirta");
+                }
+                elseif ( $data['team_id'] == 2) { 
+                    echo ("Pirma komanda");
+                }
+                elseif ($data['team_id'] == 3) {  
+                    echo ("Antra komanda");
+                }
+                else {
+                    echo ("Trečia komanda");
+                }  
+                ?> </option>
+                <option value="1">Komanda nepriskirta</option>
+                <option value="2">Pirma komanda</option>
+                <option value="3">Antra komanda</option>
             </select><br><br>
             <button type="submit" >Atnaujinti</button><br>
             <a href="admin"><button class="Atgal">Grįžti</button></a>

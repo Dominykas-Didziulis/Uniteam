@@ -78,6 +78,9 @@
             <th scope="col" class="">
                 Rolė
             </th>
+            <th scope="col" class="">
+                Komanda
+            </th>
             <th scope="col" class="Red">
                 Redagavimas
             </th>
@@ -109,6 +112,21 @@
                 }
                 else {
                     echo ("Nenustatyta");
+                }  
+                ?>  
+            </td>
+            <td scope="col" class="">
+                <?php if( $user['team_id'] == 1){
+                    echo ("Komanda nepriskirta");
+                }
+                elseif ( $user['team_id'] == 2) { 
+                    echo ("Pirma komanda");
+                }
+                elseif ($user['team_id'] == 3) {  
+                    echo ("Antra komanda");
+                }
+                else {
+                    echo ("Trečia komanda");
                 }  
                 ?>  
             </td>
