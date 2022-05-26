@@ -34,7 +34,10 @@
                     </li>
                     
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('posts') }}">Komandos</a>
+                            <a class="nav-link" href="">Komanda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('posts') }}">Pokalbiai</a>
                         </li>
                     @endauth
                     @guest
