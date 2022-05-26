@@ -33,7 +33,7 @@
                         <a class="nav-link" href="{{ route('game') }}">Žaidimai</a>
                     </li>
                     
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="{{ route('team') }}">Komanda</a>
                         </li>
                         <li class="nav-item">
@@ -93,56 +93,7 @@
         </div>
     </nav>
 
-    {{-- Image slider --}}
-    <div id="slides" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="Images/team1.png">
-                <div class="carousel-caption">
-                    <h1 class="display-2">Pradėk kurti komandą čia! </h1>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    {{-- Aprašas --}}
-
-    <div class="container-fluid padding">
-        <div class="eile row padding">
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top align-self-center" src="Images/online-registration(1).png">
-                    <div class="card-body">
-                        <p class="text-center" >Įsitrauk į komandą užpildydamas informaciją apie save savo profilyje</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top align-self-center" src="Images/choose.png">
-                    <div class="card-body">
-                        <p class="text-center" >Pažink savo komandos narius spręsdamas individualiai sugeneruotas viktorinas</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img class="card-img-top align-self-center" src="Images/team-building.png">
-                    <div class="card-body">
-                        <p class="text-center" >Stiprink tarpusavio ryšį žaisdamas virtualius komandos fromavimo žaidimus</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div id="id" class="carousel slide" data-ride="carousel">
-        <div class="carousel-inner">
-            <div id="yea" class="carousel-item active">
-                <img id="HH" src="Images/HH.png">
-            </div>
-        </div>
-    </div>
+    
 
     {{-- Footeris --}}
 

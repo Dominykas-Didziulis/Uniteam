@@ -52,7 +52,7 @@ Route::get('/prisesk', function () {return view('sit');})->name('sit');
 
 Route::get('/atspek', function () {return view('guesswho');})->name('guesswho');
 
-Route::get('/teams',[TeamController::class,'show'])->name('teams');
+Route::get('/team', function () {return view('team');})->name('team');
 //Route::get('edit/{id}',[TeamController::class,'editRole']);
 //Route::post('edit',[TeamController::class,'UpdateRole']);
 
