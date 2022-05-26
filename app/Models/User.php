@@ -24,6 +24,7 @@ class User extends Authenticatable
         'password',
         'nickname',
         'ulevel',
+        'team_id',
     ];
 
     /**

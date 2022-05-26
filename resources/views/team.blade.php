@@ -33,7 +33,7 @@
                         <a class="nav-link" href="{{ route('game') }}">Žaidimai</a>
                     </li>
                     
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('team') }}">Komanda</a>
                         </li>
                         <li class="nav-item">
@@ -92,7 +92,55 @@
             </div>
         </div>
     </nav>
+    <div class="container">
+        <table class="table table-bordered table-hover">
+            <tr>
+            <th scope="col" class="">
+                Vardas
+            </th>
+            <th scope="col" class="">
+                Pavardė
+            </th>
+            <th scope="col" class="">
+                Slapyvardis
+            </th>
+            <th scope="col" class="">
+                Rolė
+            </th>
+            </tr>
 
+            @foreach($users as $user)
+            @if($user['team_id'] == auth()->user()->team_id)
+            <tr>
+            <td scope="col" class="">
+                {{ $user['name']}}
+            </td>
+            <td scope="col" class="">
+                {{ $user['subname']}}
+            </td>
+            <td scope="col" class="">
+                {{ $user['nickname']}}
+            </td>
+            <td scope="col" class="">
+                <?php if( $user['ulevel'] == 1){
+                    echo ("Administratorius");
+                }
+                elseif ( $user['ulevel'] == 2) { 
+                    echo ("Komandos vadovas");
+                }
+                elseif ($user['ulevel'] == 3) {  
+                    echo ("Komandos narys");
+                }
+                else {
+                    echo ("Nenustatyta");
+                }  
+                ?>  
+            </td>
+            </tr>
+            @endif
+            @endforeach
+        </table>
+    </div>
     
 
     {{-- Footeris --}}

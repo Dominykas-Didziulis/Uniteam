@@ -25,16 +25,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="/">Pagrindinis</a>
                     </li>
                     @auth
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('game') }}">Žaidimai</a>
                     </li>
-
+                    
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('posts') }}">Komandos</a>
+                            <a class="nav-link" href="{{ route('team') }}">Komanda</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('posts') }}">Pokalbiai</a>
                         </li>
                     @endauth
                     @guest
@@ -47,7 +50,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin') }}">Narių sąrašas</a>
                         </li>
-
+                      
 
                         @endif
                     @endauth
@@ -55,7 +58,7 @@
                         {{-- <li class="nav-item">
                             <a class="nav-link" href="profile" style="font-style: italic;">{{ auth()->user()->nickname }}</a>
                         </li> --}}
-
+                        
                         <li class="nav-item">
                             <li class="dropdown">
                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  style="background: none; border: 0">{{ auth()->user()->nickname }}<span class="caret"></span></button>

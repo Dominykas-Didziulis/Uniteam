@@ -10,11 +10,15 @@ use Illuminate\Support\Facades\DB;
 
 class TeamController extends Controller
 {
-    public function show()
-    {
-        $data= User::all();
-        return view('teams',['users'=>$data]);
-    }
+  private $pageCount=9;
+
+  public function show()
+  {
+      //$data= User::where('team id','1');
+      $data = User::all();
+     // dd($data);
+      return view('team',['users'=>$data]);
+  }
 
     public function editRole($id)
     {
