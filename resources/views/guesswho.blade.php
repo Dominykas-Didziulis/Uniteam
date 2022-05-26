@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Quiz Demo</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
+    <link rel="shortcut icon" href="QTemplateData/favicon.ico">
+    <link rel="stylesheet" href="QTemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -55,15 +55,15 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/GH_Build.loader.js";
+      var buildUrl = "QBuild";
+      var loaderUrl = buildUrl + "/atspek_Build.loader.js";
       var config = {
-        dataUrl: buildUrl + "/GH_Build.data",
-        frameworkUrl: buildUrl + "/GH_Build.framework.js",
-        codeUrl: buildUrl + "/GH_Build.wasm",
+        dataUrl: buildUrl + "/atspek_Build.data",
+        frameworkUrl: buildUrl + "/atspek_Build.framework.js",
+        codeUrl: buildUrl + "/atspek_Build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "Quiz Demo",
+        productName: "Atspek Zmogu",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };

@@ -30,7 +30,7 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login', [LoginController::class, 'store']);
-Route::get('/update',[LoginController::class,'getUsersCredentials'])->name('user.update'); 
+Route::get('/update',[LoginController::class,'getUsersCredentials'])->name('user.update');
 Route::post('/update',[LoginController::class,'setUsersCredentials']);
 
 Route::get('/posts', [PostController::class, 'index'])->name('posts');
@@ -46,7 +46,8 @@ Route::get('editrole/{id}',[AdminController::class,'editRole']);
 Route::post('edit',[AdminController::class,'UpdateRole']);
 
 Route::get('/about', function () {return view('about');})->name('about');
-Route::get('/game', function () {return view('game');})->name('game');
+Route::get('/viktorina', function () {return view('quiz');})->name('quiz');
+Route::get('/prisesk', function () {return view('sit');})->name('sit');
 
 Route::get('/atspek', function () {return view('guesswho');})->name('guesswho');
 
