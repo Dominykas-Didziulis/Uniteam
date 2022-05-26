@@ -13,7 +13,7 @@
     {{-- <link rel="stylesheet" href="{{ asset('css/home.css') }}"> --}}
     <title>UNITEAM</title>
 
-    
+
 </head>
 <body>
     {{-- Navbar --}}
@@ -32,7 +32,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('game') }}">Žaidimai</a>
                     </li>
-                    
+
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('posts') }}">Komandos</a>
                         </li>
@@ -47,7 +47,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin') }}">Narių sąrašas</a>
                         </li>
-                      
+
 
                         @endif
                     @endauth
@@ -55,7 +55,7 @@
                         {{-- <li class="nav-item">
                             <a class="nav-link" href="profile" style="font-style: italic;">{{ auth()->user()->nickname }}</a>
                         </li> --}}
-                        
+
                         <li class="nav-item">
                             <li class="dropdown">
                                 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  style="background: none; border: 0">{{ auth()->user()->nickname }}<span class="caret"></span></button>
@@ -91,7 +91,7 @@
     </nav>
 
 
-   
+
 
     {{-- Footeris --}}
 
