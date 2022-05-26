@@ -25,9 +25,6 @@
                         <a class="nav-link" href="/">Pagrindinis</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">Žaidimai</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('about') }}">Apie mus</a>
                     </li>
                     <li class="nav-item">
@@ -83,13 +80,14 @@
 
     {{-- Footeris --}}
 
-    <footer>
+    <footer class="fixed-bottom">
         <div class="container-fluid padding">
             <div class="text" id="text">
                 <p>©2022 | COVID PAKIRSTI</p>
             </div>
         </div>
     </footer>
+
     {{-- @endsection --}}
 
 

@@ -105,28 +105,28 @@
     {{-- Aprašas --}}
 
     <div class="container-fluid padding">
-        <div class="row padding">
+        <div class="eile row padding">
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top align-self-center" src="Images/brainstorm.png">
+                    <img class="card-img-top align-self-center" src="Images/online-registration(1).png">
                     <div class="card-body">
-                        <p class="text-center">Įsitrauk į komandą užpildydamas informaciją apie save savo profilyje</p>
+                        <p class="text-center" >Įsitrauk į komandą užpildydamas informaciją apie save savo profilyje</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top align-self-center" src="Images/brainstorm.png">
+                    <img class="card-img-top align-self-center" src="Images/choose.png">
                     <div class="card-body">
-                        <p class="text-center">Pažink savo komandos narius spręsdamas individualiai sugeneruotas viktorinas</p>
+                        <p class="text-center" >Pažink savo komandos narius spręsdamas individualiai sugeneruotas viktorinas</p>
                     </div>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="card">
-                    <img class="card-img-top align-self-center" src="Images/brainstorm.png">
+                    <img class="card-img-top align-self-center" src="Images/team-building.png">
                     <div class="card-body">
-                        <p class="text-center">Stiprink tarpusavio ryšį žaisdamas virtualius komandos fromavimo žaidimus</p>
+                        <p class="text-center" >Stiprink tarpusavio ryšį žaisdamas virtualius komandos fromavimo žaidimus</p>
                     </div>
                 </div>
             </div>

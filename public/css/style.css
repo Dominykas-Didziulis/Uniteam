@@ -5,6 +5,9 @@ html,body{
   width: 100%;
   font-family: 'Poppins';
 }
+body{
+  background-image: linear-gradient(to left, #4568dc,#b06ab3);
+}
 .navbar{
   padding: .8rem;
   background-image: linear-gradient(to left, #4568dc,#b06ab3);
@@ -27,6 +30,8 @@ html,body{
   text-shadow: 1px 1px 10px #000;
 }
 .card{
+  padding-top: 40px;
+  background-color: white;
   border: none !important;
 }
 .card-img-top{
@@ -51,6 +56,9 @@ footer{
 }
 #id{
   padding-bottom: 25px;
+}
+.eile{
+  padding-bottom: 50px;
 }
 
 
