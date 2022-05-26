@@ -140,18 +140,30 @@
                                 echo ("Komanda nepriskirta");
                             }
                             elseif ( $data['team_id'] == 2) { 
-                                echo ("Pirma komanda");
+                                echo ("GAMA komanda");
                             }
                             elseif ($data['team_id'] == 3) {  
-                                echo ("Antra komanda");
+                                echo ("ALFA komanda");
+                            }
+                            elseif ($data['team_id'] == 4) {  
+                                echo ("TETA komanda");
+                            }
+                            elseif ($data['team_id'] == 5) {  
+                                echo ("OKTA komanda");
+                            }
+                            elseif ($data['team_id'] == 6) {
+                                echo ("BETA komanda");
                             }
                             else {
-                                echo ("Trečia komanda");
+                                echo ("BETA komanda");
                             }  
                             ?> </option>
                             <option value="1">Komanda nepriskirta</option>
-                            <option value="2">Pirma komanda</option>
-                            <option value="3">Antra komanda</option>
+                            <option value="2">GAMA komanda</option>
+                            <option value="3">ALFA komanda</option>
+                            <option value="4">TETA komanda</option>
+                            <option value="5">OKTA komanda</option>
+                            <option value="6">BETA komanda</option>
                         </select><br><br>
                     </div>
                     <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Atnaujinti</button>
@@ -202,21 +214,33 @@
             </select><br>
             <select name="team_id">
                 <option value={{$data['team_id']}}><?php if( $data['team_id'] == 1){
-                    echo ("Komanda nepriskirta");
-                }
-                elseif ( $data['team_id'] == 2) { 
-                    echo ("Pirma komanda");
-                }
-                elseif ($data['team_id'] == 3) {  
-                    echo ("Antra komanda");
-                }
-                else {
-                    echo ("Trečia komanda");
-                }  
-                ?> </option>
-                <option value="1">Komanda nepriskirta</option>
-                <option value="2">Pirma komanda</option>
-                <option value="3">Antra komanda</option>
+                     echo ("Komanda nepriskirta");
+                    }
+                    elseif ( $data['team_id'] == 2) { 
+                        echo ("GAMA komanda");
+                    }
+                    elseif ($data['team_id'] == 3) {  
+                        echo ("ALFA komanda");
+                    }
+                    elseif ($data['team_id'] == 4) {  
+                        echo ("TETA komanda");
+                    }
+                    elseif ($data['team_id'] == 5) {  
+                        echo ("OKTA komanda");
+                    }
+                    elseif ($data['team_id'] == 6) {
+                        echo ("BETA komanda");
+                    }
+                    else {
+                        echo ("BETA komanda");
+                    }  
+                    ?> </option>
+                    <option value="1">Komanda nepriskirta</option>
+                    <option value="2">GAMA komanda</option>
+                    <option value="3">ALFA komanda</option>
+                    <option value="4">TETA komanda</option>
+                    <option value="5">OKTA komanda</option>
+                    <option value="6">BETA komanda</option>
             </select><br><br>
             <button type="submit" >Atnaujinti</button><br>
             <a href="admin"><button class="Atgal">Grįžti</button></a>

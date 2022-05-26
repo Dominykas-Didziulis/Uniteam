@@ -44,14 +44,24 @@
                 echo ("Komanda nepriskirta");
             }
             elseif ( $data['team_id'] == 2) { 
-                echo ("Pirma komanda");
+                echo ("GAMA komanda");
             }
             elseif ($data['team_id'] == 3) {  
-                echo ("Antra komanda");
+                echo ("ALFA komanda");
+            }
+            elseif ($data['team_id'] == 4) {  
+                echo ("TETA komanda");
+            }
+            elseif ($data['team_id'] == 5) {  
+                echo ("OKTA komanda");
+            }
+            elseif ($data['team_id'] == 6) {
+                echo ("BETA komanda");
             }
             else {
-                echo ("Trečia komanda");
+                echo ("BETA komanda");
             }  
+            
             ?> </option>
 
         </select><br><br>

@@ -157,7 +157,7 @@
 
     {{-- Footeris --}}
 
-    <footer>
+    <footer class="fixed-bottom">
         <div class="container-fluid padding">
             <div class="text" id="text">
                 <p>©2022 | COVID PAKIRSTI</p>
