@@ -23,10 +23,11 @@ img{
 }
 #container{
   margin-top: 75px;
-  background-color: rgb(212, 209, 209);
+  background-color: rgb(202, 174, 209);
   width: 85%;
   padding-top: 25px;
   padding-bottom: 25px;
+  border-radius: 10px;
 }
 .redaguoti{
   margin-top: 30px;
