@@ -15,7 +15,7 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/"><img src="Images/TEAM.png" style="width: 255px; height: 109px;"></a>
+            <a class="navbar-brand" href="/"><img src="../Images/TEAM.png" style="width: 255px; height: 109px;"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -75,59 +75,61 @@
     <div class="modal-dialog text-center">
         <div class="col-sm-8 main-section">
             <div class="modal-content">
-                <form class="col-12" action="/userForm" method="POST">
+                <form class="col-12" action="/edit" method="post">
                     @csrf
+                    <input type="hidden" readonly="readonly" name="id" value="{{$data['id']}}">
+                    <input type="hidden" readonly="readonly" name="user_id" value="{{$data['user_id']}}">
                     <div class="form-group">
                         <label for="vardas" class="Vardas float-left">Vardas:</label>
-                        <input type="text" name="vardas" class="form-control"> 
+                        <input type="text" name="vardas" class="form-control" value="{{$data['vardas']}}"> 
                     </div>
                     <div class="form-group">
                         <label for="pavarde" class="float-left">Pavardė:</label>
-                        <input type="text" name="pavarde" class="form-control"> 
+                        <input type="text" name="pavarde" class="form-control" value="{{$data['pavarde']}}"> 
                     </div>
                     <div class="form-group">
                         <label for="el_Pastas" class="float-left">Elektroninis paštas:</label>
-                        <input type="text" name="el_Pastas" class="form-control"> 
+                        <input type="text" name="el_Pastas" class="form-control" value="{{$data['el_Pastas']}}"> 
                     </div>
                     <div class="form-group">
                         <label for="gimimo_Data" class="float-left">Gimimo data:</label>
-                        <input type="text" name="gimimo_Data" class="form-control"> 
+                        <input type="text" name="gimimo_Data" class="form-control" value="{{$data['gimimo_Data']}}"> 
                     </div>
                     <div class="form-group">
                         <label for="gimimo_Miestas" class="float-left">Miestas kuriame gimiau:</label>
-                        <input type="text" name="gimimo_Miestas" class="form-control"> 
+                        <input type="text" name="gimimo_Miestas" class="form-control" value="{{$data['gimimo_Miestas']}}"> 
                     </div>
                     <div class="form-group">
                         <label for="trys_Zodziai" class="float-left">Trys žodžiai apibūdinantys mane:</label>
-                        <input type="text" name="trys_Zodziai" class="form-control"> 
+                        <input type="text" name="trys_Zodziai" class="form-control" value="{{$data['trys_Zodziai']}}"> 
                     </div>
                     <div class="form-group">
                         <label for="pomegiai" class="float-left">Mano pomėgiai:</label>
-                        <input type="text" name="pomegiai" class="form-control"> 
+                        <input type="text" name="pomegiai" class="form-control" value="{{$data['pomegiai']}}"> 
                     </div>
                     <div class="form-group">
                         <label for="auto_Marke" class="float-left">Mano vairuojamo automobilio markė:</label>
-                        <input type="text" name="auto_Marke" class="form-control"> 
+                        <input type="text" name="auto_Marke" class="form-control" value="{{$data['auto_Marke']}}"> 
                     </div>
                     <div class="form-group">
                         <label for="muzikos_Zanras" class="float-left">Mano mėgstamiausias muzikos žanras:</label>
-                        <input type="text" name="muzikos_Zanras" class="form-control"> 
+                        <input type="text" name="muzikos_Zanras" class="form-control" value="{{$data['muzikos_Zanras']}}"> 
                     </div>
                     <div class="form-group">
                         <label for="filmas" class="float-left">Mėgstamiausias filmas:</label>
-                        <input type="text" name="filmas" class="form-control"> 
+                        <input type="text" name="filmas" value="{{$data['filmas']}}">
                     </div>
                     <div class="form-group">
                         <label for="didziausia_Baime" class="float-left">Didžiausia baimė yra:</label>
-                        <input type="text" name="didziausia_Baime" class="form-control"> 
+                        <input type="text" name="didziausia_Baime" class="form-control" value="{{$data['didziausia_Baime']}}"> 
                     </div>
                     <div class="form-group">
                         <label for="salis_Aplankyti" class="float-left">Šalis kurią norėčiau labiausiai aplankyti:</label>
-                        <input type="text" name="salis_Aplankyti" class="form-control"> 
+                        <input type="text" name="salis_Aplankyti" class="form-control" value="{{$data['salis_Aplankyti']}}"> 
                     </div>
                     <div class="form-group">
-                        <label for="kreiptis_galima" class="float-left">Į mane kreiptis galima dėl:</label>
-                        <input type="text" name="kreiptis_galima" class="form-control"> 
+                        <label for="kreiptis_Galima" class="float-left">Į mane kreiptis galima dėl:</label>
+                        <input type="text" name="kreiptis_Galima" class="form-control" value="{{$data['kreiptis_Galima']}}"> 
                     </div>
                     <button type="submit" class="btn"><i class="fas fa-sign-in-alt"></i>Išsaugoti</button>
                 </form>

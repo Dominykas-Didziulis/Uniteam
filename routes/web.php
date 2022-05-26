@@ -51,15 +51,16 @@ Route::get('/game', function () {return view('game');})->name('game');
 Route::get('/prisesk', function () {return view('sit');})->name('sit');
 
 Route::get('/atspek', function () {return view('guesswho');})->name('guesswho');
-
 Route::get('/team',[TeamController::class,'show'])->name('team');
 //Route::get('edit/{id}',[TeamController::class,'editRole']);
 //Route::post('edit',[TeamController::class,'UpdateRole']);
 
 
 
-Route::get('/userForm', [UserFormController::class, 'index'])->name('userForm');
-Route::post('/userForm', [UserFormController::class, 'store']);
+//Route::get('/userForm', [UserFormController::class, 'index'])->name('userForm');
+Route::get('userForm/{user_id}',[UserFormController::class,'editUserForm']);
+Route::post('edit',[UserFormController::class,'UpdateUserForm']);
+//Route::post('/userForm', [UserFormController::class, 'store']);
 
 Route::get('/creatTeam', function () {
     return view('creatTeam');

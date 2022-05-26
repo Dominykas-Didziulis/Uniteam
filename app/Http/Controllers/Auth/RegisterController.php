@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Models\User;
+use App\Models\UserForm;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -38,6 +39,7 @@ class RegisterController extends Controller
             'ulevel' => 3,
             'team_id' => 1
         ]);
+
 
        // auth()->attempt($request->only('email', 'password'));
 

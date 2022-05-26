@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class UserForm extends Model
 {
     protected $fillable = [
+        'id',
         'user_id',
         'vardas',
         'pavarde',
@@ -16,13 +17,12 @@ class UserForm extends Model
         'gimimo_Miestas',
         'trys_Zodziai',
         'pomegiai',
+        'kreiptis_galima', 
         'auto_Marke',
         'muzikos_Zanras',
         'filmas',
         'didziausia_Baime',
         'salis_Aplankyti',
-        'kreiptis_galima'  
-    
     ];
     use HasFactory;
 }

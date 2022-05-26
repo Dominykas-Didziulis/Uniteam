@@ -19,6 +19,7 @@ class AdminController extends Controller
     public function editRole($id)
     {
         $data= User::find($id);
+        //dd($data);
         return view('editRole',['data'=>$data]);
     }
     public function UpdateRole(Request $req)
