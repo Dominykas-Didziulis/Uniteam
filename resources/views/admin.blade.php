@@ -161,17 +161,26 @@
             </td>
             <td scope="col" class="">
                 <?php if( $user['team_id'] == 1){
-                    echo ("Komanda nepriskirta");
-                }
-                elseif ( $user['team_id'] == 2) { 
-                    echo ("Pirma komanda");
-                }
-                elseif ($user['team_id'] == 3) {  
-                    echo ("Antra komanda");
-                }
-                else {
-                    echo ("Trečia komanda");
-                }  
+                     echo ("Komanda nepriskirta");
+                    }
+                    elseif ( $user['team_id'] == 2) { 
+                        echo ("GAMA komanda");
+                    }
+                    elseif ($user['team_id'] == 3) {  
+                        echo ("ALFA komanda");
+                    }
+                    elseif ($user['team_id'] == 4) {  
+                        echo ("TETA komanda");
+                    }
+                    elseif ($user['team_id'] == 5) {  
+                        echo ("OKTA komanda");
+                    }
+                    elseif ($user['team_id'] == 6) {
+                        echo ("BETA komanda");
+                    }
+                    else {
+                        echo ("BETA komanda");
+                    }  
                 ?>  
             </td>
             <td class="cell">
@@ -184,7 +193,7 @@
     </div>
     {{-- Footeris --}}
 
-    <footer>
+    <footer class="fixed-bottom">
         <div class="container-fluid padding">
             <div class="text" id="text">
                 <p>©2022 | COVID PAKIRSTI</p>
