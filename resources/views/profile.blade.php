@@ -91,15 +91,15 @@
                 </div>
             </div>
         </nav>
+        @foreach($users as $user)
+        @if($user['user_id'] == auth()->user()->id)   
     <div class="float-right col-2">
-        <button class="redaguoti"><a class="a" href="userForm">Redaguoti</a></button>
+        <button class="redaguoti"><a class="a" href={{"userForm/".$user['user_id']}} >Redaguoti</a></button>
     </div>
     <div class="container-fluid padding" id="container">
         <div class="row text-center padding">
             <div class="col-md-4">
-                
-                @foreach($users as $user)
-                @if($user['user_id'] == auth()->user()->id)                  
+                               
                 <div class="form-group">
                     <label for="name">Vardas</label><br>
                     <input type="text" name="name" readonly="readonly" value="{{ $user['vardas']}}">
@@ -131,8 +131,8 @@
                     <input type="text" name="pomegiai" readonly="readonly" value="{{ $user['pomegiai']}}">
                 </div>
                 <div class="form-group">
-                    <label for="car">Vairuojamo automobilio markė</label><br>
-                    <input type="text" name="car" readonly="readonly" value="{{ $user['auto_Marke']}}">
+                    <label for="car">Į mane galima kreiptis dėl...</label><br>
+                    <input type="text" name="car" readonly="readonly" value="{{ $user['kreiptis_Galima']}}">
                 </div>
             </div>
             <div class="col-md-4">
@@ -151,11 +151,7 @@
                 <div class="form-group">
                     <label for="country">Šalis, kurią norėčiau aplankyti</label><br>
                     <input type="text" name="country" readonly="readonly" value="{{ $user['salis_Aplankyti']}}">
-                </div>
-                <div class="form-group">
-                    <label for="use">Į mane galima kreiptis dėl...</label><br>
-                    <input type="text" name="use" readonly="readonly" value="{{ $user['kreiptis_Galima']}}">
-                </div>     
+                </div>  
                 @endif
                 @endforeach
             </div>

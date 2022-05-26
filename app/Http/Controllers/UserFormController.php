@@ -4,15 +4,45 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\UserForm;
+use App\Models\User;
 
 class UserFormController extends Controller
 {   
-
     public function show()
     {
         $data= UserForm::all();
         return view('profile',['users'=>$data]);
     }
+
+    public function editUserForm($id)
+    {
+        ///$data= UserForm::find($user_id);
+        $data = UserForm::where('user_id', $id)->get();
+       //dd($data[0]);
+        return view('userForm',['data'=>$data[0]]);
+    }
+    public function UpdateUserForm(Request $req)
+    {
+        //dd($req);
+
+        $data=UserForm::find($req->id);
+        $data->vardas=$req->vardas;
+        $data->pavarde=$req->pavarde;
+        $data->el_Pastas=$req->el_Pastas;
+        $data->gimimo_Data=$req->gimimo_Data;
+        $data->gimimo_Miestas=$req->gimimo_Miestas;
+        $data->trys_Zodziai=$req->trys_Zodziai;
+        $data->pomegiai=$req->pomegiai;
+        $data->auto_Marke=$req->auto_Marke;
+        $data->kreiptis_Galima=$req->kreiptis_Galima;
+        $data->muzikos_Zanras=$req->muzikos_Zanras;
+        $data->filmas=$req->filmas;
+        $data->didziausia_Baime=$req->didziausia_Baime;
+        $data->salis_Aplankyti=$req->salis_Aplankyti;
+        $data->save();
+        return redirect('profile');
+    }
+
     public function index()
     {
         return view('userForm');
