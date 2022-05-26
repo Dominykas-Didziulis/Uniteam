@@ -91,7 +91,25 @@
         </div>
     </nav>
     {{-- Linkai --}}
-    
+    <div class="container-fluid padding">
+        <div class="eile row padding">
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="{{ route('quiz') }}"><img class="card-img-top align-self-center" src="Images/VIKTORINA.png"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="{{ route('guesswho') }}"><img class="card-img-top align-self-center" src="Images/atspekkolega.png"></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <a href="{{ route('sit') }}"><img class="card-img-top align-self-center" src="Images/sitdown(1).png"></a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     {{-- Footeris --}}

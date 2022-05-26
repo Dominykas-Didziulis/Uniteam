@@ -17,9 +17,32 @@ html,body{
   font-size: 1.1em !important;
 }
 footer{
-    background-color: #3f3f3f;
-    color: #d5d5d5;
-    height: 55px;
-    text-align: center;
-    padding-top: 15px;
-  }
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  height: 55px;
+  text-align: center;
+  padding-top: 15px;
+}
+.card{
+  padding-top: 40px;
+  background-color: white;
+  border: none !important;
+}
+.card-img-top{
+  width: 450px;
+  height: 250px;
+  box-align: center;
+  margin-left: 15px;
+}
+.eile{
+  margin-top: 60px;
+}
+.card-body{
+  text-align: center;
+}
+.btn{
+  background-color: #4568dc;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+}

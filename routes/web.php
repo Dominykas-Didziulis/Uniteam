@@ -59,7 +59,7 @@ Route::get('/team',[TeamController::class,'show'])->name('team');
 
 //Route::get('/userForm', [UserFormController::class, 'index'])->name('userForm');
 Route::get('userForm/{user_id}',[UserFormController::class,'editUserForm']);
-Route::post('edit',[UserFormController::class,'UpdateUserForm']);
+Route::post('edituserform',[UserFormController::class,'UpdateUserForm']);
 //Route::post('/userForm', [UserFormController::class, 'store']);
 
 Route::get('/creatTeam', function () {

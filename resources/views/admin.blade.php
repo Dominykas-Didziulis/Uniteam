@@ -25,7 +25,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
+                        <li class="nav-item">
                             <a class="nav-link" href="/">Pagrindinis</a>
                         </li>
                         @auth
@@ -47,7 +47,7 @@
                         @endguest
                         @auth
                             @if (auth()->user()->ulevel == 1)
-                            <li class="nav-item">
+                            <li class="nav-item active">
                                 <a class="nav-link" href="{{ route('admin') }}">Narių sąrašas</a>
                             </li>
                           
@@ -98,12 +98,12 @@
             <input type='submit' name='submit' id='submit' value='Naujo naudotojo registracija' class='submit'>
         </form>
     </div>
-    <div class="float-right col-4">
+    {{-- <div class="float-right col-4">
         <form action="teams" method="get">
             <input type='hidden' name='staffId' id='staffId' value='$staffId'> 
             <input type='submit' name='submit' id='submit' value='Sukurti naują komandą' class='submit'>
         </form>
-    </div>
+    </div> --}}
     <div class="container">
         <table class="table table-bordered table-hover">
             <tr>

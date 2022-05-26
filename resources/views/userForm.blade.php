@@ -21,7 +21,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/">Pagrindinis</a>
                     </li>
                     <li class="nav-item">
@@ -75,7 +75,7 @@
     <div class="modal-dialog text-center">
         <div class="col-sm-8 main-section">
             <div class="modal-content">
-                <form class="col-12" action="/edit" method="post">
+                <form class="col-12" action="/edituserform" method="post">
                     @csrf
                     <input type="hidden" readonly="readonly" name="id" value="{{$data['id']}}">
                     <input type="hidden" readonly="readonly" name="user_id" value="{{$data['user_id']}}">
@@ -117,7 +117,7 @@
                     </div>
                     <div class="form-group">
                         <label for="filmas" class="float-left">Mėgstamiausias filmas:</label>
-                        <input type="text" name="filmas" value="{{$data['filmas']}}">
+                        <input type="text" name="filmas" class="form-control" value="{{$data['filmas']}}">
                     </div>
                     <div class="form-group">
                         <label for="didziausia_Baime" class="float-left">Didžiausia baimė yra:</label>
