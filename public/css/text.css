@@ -28,3 +28,8 @@
     border-radius: 5px;
     margin-bottom: 15px;
 }
+.box{
+    inline-size: 470px;
+    overflow-wrap: break-word;
+    text-align: center;
+}

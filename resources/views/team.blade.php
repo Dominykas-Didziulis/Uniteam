@@ -8,7 +8,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/team.css') }}">
 
     {{-- <link rel="stylesheet" href="{{ asset('css/home.css') }}"> --}}
     <title>UNITEAM</title>
@@ -25,7 +25,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/">Pagrindinis</a>
                     </li>
                     @auth
@@ -33,7 +33,7 @@
                         <a class="nav-link" href="{{ route('game') }}">Žaidimai</a>
                     </li>
                     
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="{{ route('team') }}">Komanda</a>
                         </li>
                         <li class="nav-item">
@@ -145,7 +145,7 @@
 
     {{-- Footeris --}}
 
-    <footer>
+    <footer class="fixed-bottom">
         <div class="container-fluid padding">
             <div class="text" id="text">
                 <p>©2022 | COVID PAKIRSTI</p>

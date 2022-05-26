@@ -18,18 +18,25 @@ html,body{
   font-size: 1.1em !important;
 }
 .container{
-    margin-top: 30px;
-    text-align: center;
-    width: 500px;
+  margin-top: 30px;
+  text-align: center;
+  width: 500px;
 }
 .post{
-    background-color: rgb(225, 209, 255);
+  background-color: rgb(225, 209, 255);
 }
 .mygtukas{
-    background-color: #4568dc;
-    border: 0;
-    border-radius: 5px;
-    width: 100px;
-    height: 35px;
-    color: white;
+  background-color: #4568dc;
+  border: 0;
+  border-radius: 5px;
+  width: 100px;
+  height: 35px;
+  color: white;
+}
+footer{
+  background-color: #3f3f3f;
+  color: #d5d5d5;
+  height: 55px;
+  text-align: center;
+  padding-top: 15px;
 }

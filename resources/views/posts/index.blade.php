@@ -24,7 +24,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/">Pagrindinis</a>
                     </li>
                     @auth
@@ -35,7 +35,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('team') }}">Komanda</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item active">
                             <a class="nav-link" href="{{ route('posts') }}">Pokalbiai</a>
                         </li>
                     @endauth
@@ -125,5 +125,7 @@
             @endif
         </div>
     </div>
+
+
 </body>
 </html>
