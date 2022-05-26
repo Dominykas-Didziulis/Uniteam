@@ -47,10 +47,7 @@ Route::post('edit',[AdminController::class,'UpdateRole']);
 
 Route::get('/about', function () {return view('about');})->name('about');
 Route::get('/viktorina', function () {return view('quiz');})->name('quiz');
-<<<<<<< HEAD
 Route::get('/game', function () {return view('game');})->name('game');
-=======
->>>>>>> b576927d6c663f45ba455be66012ea5d927f7160
 Route::get('/prisesk', function () {return view('sit');})->name('sit');
 
 Route::get('/atspek', function () {return view('guesswho');})->name('guesswho');
