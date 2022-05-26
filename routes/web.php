@@ -64,8 +64,7 @@ Route::post('/userForm', [UserFormController::class, 'store']);
 Route::get('/creatTeam', function () {
     return view('creatTeam');
 });
-Route::get('/profile', function () {
-    return view('profile');
-});
+Route::get('/profile',[UserFormController::class,'show'])->name('profile');
+//Route::get('/profile', function () {return view('profile');});
 Route::view('teams', 'addTeam');
 Route::post('/submit', [addTeam::class, 'save']);

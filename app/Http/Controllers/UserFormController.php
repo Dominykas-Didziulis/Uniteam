@@ -7,6 +7,12 @@ use App\Models\UserForm;
 
 class UserFormController extends Controller
 {   
+
+    public function show()
+    {
+        $data= UserForm::all();
+        return view('profile',['users'=>$data]);
+    }
     public function index()
     {
         return view('userForm');

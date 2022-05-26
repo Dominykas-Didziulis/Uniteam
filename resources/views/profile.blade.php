@@ -97,65 +97,70 @@
     <div class="container-fluid padding" id="container">
         <div class="row text-center padding">
             <div class="col-md-4">
-                <img src="Images/person.jpg">
+                
+                @foreach($users as $user)
+                @if($user['user_id'] == auth()->user()->id)                  
                 <div class="form-group">
                     <label for="name">Vardas</label><br>
-                    <input type="text" name="name" readonly="readonly" value="Petras">
+                    <input type="text" name="name" readonly="readonly" value="{{ $user['vardas']}}">
                 </div>
                 <div class="form-group">
                     <label for="surname">Pavardė</label><br>
-                    <input type="text" name="surname" readonly="readonly" value="Petraitis">
+                    <input type="text" name="surname" readonly="readonly" value="{{ $user['pavarde']}}">
                 </div>
                 <div class="form-group">
                     <label for="pastas">El. paštas</label><br>
-                    <input type="text" name="pastas" readonly="readonly" value="petraspetraitis@gmail.com">
+                    <input type="text" name="pastas" readonly="readonly" value="{{ $user['el_Pastas']}}">
+                </div>
+                <div class="form-group">
+                    <label for="data">Gimimo data</label><br>
+                    <input type="text" name="data" readonly="readonly" value="{{ $user['gimimo_Data']}}">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
-                    <label for="data">Gimimo data</label><br>
-                    <input type="text" name="data" readonly="readonly" value="1987-03-21">
-                </div>
-                <div class="form-group">
                     <label for="city">Gimtasis miestas</label><br>
-                    <input type="text" name="city" readonly="readonly" value="Kaunas">
+                    <input type="text" name="city" readonly="readonly" value="{{ $user['gimimo_Miestas']}}">
                 </div>
                 <div class="form-group">
                     <label for="words">Trys žodžiai geriausiai apibūdinantys mane</label><br>
-                    <input type="text" name="words" readonly="readonly" value="Draugiškas, atsakingas, protingas">
+                    <input type="text" name="words" readonly="readonly" value="{{ $user['trys_Zodziai']}}">
                 </div>
                 <div class="form-group">
                     <label for="pomegiai">Pomėgiai</label><br>
-                    <input type="text" name="pomegiai" readonly="readonly" value="Žvejyba, futbolas, azartiniai žaidimai">
+                    <input type="text" name="pomegiai" readonly="readonly" value="{{ $user['pomegiai']}}">
                 </div>
                 <div class="form-group">
                     <label for="car">Vairuojamo automobilio markė</label><br>
-                    <input type="text" name="car" readonly="readonly" value="Mercedes">
+                    <input type="text" name="car" readonly="readonly" value="{{ $user['auto_Marke']}}">
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="form-group">
                     <label for="music">Mėgstamiausias muzikos žanras</label><br>
-                    <input type="text" name="music" readonly="readonly" value="Rokas">
+                    <input type="text" name="music" readonly="readonly" value="{{ $user['muzikos_Zanras']}}">
                 </div>
                 <div class="form-group">
                     <label for="movie">Geriausias matytas filmas</label><br>
-                    <input type="text" name="movie" readonly="readonly" value="Krikštatėvis">
+                    <input type="text" name="movie" readonly="readonly" value="{{ $user['filmas']}}">
                 </div>
                 <div class="form-group">
                     <label for="fear">Didžiausia baimė</label><br>
-                    <input type="text" name="fear" readonly="readonly" value="Uždaros patalpos">
+                    <input type="text" name="fear" readonly="readonly" value="{{ $user['didziausia_Baime']}}">
                 </div>
                 <div class="form-group">
                     <label for="country">Šalis, kurią norėčiau aplankyti</label><br>
-                    <input type="text" name="country" readonly="readonly" value="Tailandas">
+                    <input type="text" name="country" readonly="readonly" value="{{ $user['salis_Aplankyti']}}">
                 </div>
                 <div class="form-group">
                     <label for="use">Į mane galima kreiptis dėl...</label><br>
-                    <input type="text" name="use" readonly="readonly" value="Renginių organizavimo įdėjų">
-                </div>
+                    <input type="text" name="use" readonly="readonly" value="{{ $user['kreiptis_Galima']}}">
+                </div>     
+                @endif
+                @endforeach
             </div>
         </div>
     </div>
+
 </body>
 </html>
