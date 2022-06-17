@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Unity WebGL Player | Quiz</title>
-    <link rel="shortcut icon" href="ATemplateData/favicon.ico">
-    <link rel="stylesheet" href="ATemplateData/style.css">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
@@ -55,15 +55,15 @@
         updateBannerVisibility();
       }
 
-      var buildUrl = "ABuild";
-      var loaderUrl = buildUrl + "/quiz_Build.loader.js";
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/new_quiz_build.loader.js";
       var config = {
-        dataUrl: buildUrl + "/quiz_Build.data",
-        frameworkUrl: buildUrl + "/quiz_Build.framework.js",
-        codeUrl: buildUrl + "/quiz_Build.wasm",
+        dataUrl: buildUrl + "/new_quiz_build.data",
+        frameworkUrl: buildUrl + "/new_quiz_build.framework.js",
+        codeUrl: buildUrl + "/new_quiz_build.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
-        productName: "Viktorina",
+        productName: "Quiz",
         productVersion: "1.0",
         showBanner: unityShowBanner,
       };
