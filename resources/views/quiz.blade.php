@@ -91,8 +91,6 @@
             </div>
         </div>
     </nav>
-    <spacer type = "block" height = "50" />
-
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600></canvas>
       <div id="unity-loading-bar">
