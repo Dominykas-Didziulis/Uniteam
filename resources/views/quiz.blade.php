@@ -11,7 +11,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <link href="{{ URL::asset('css/about.css') }}" rel="stylesheet" type="text/css" >
+    <link href="{{ URL::asset('css/games.css') }}" rel="stylesheet" type="text/css" >
   </head>
   <body>
 
@@ -24,11 +24,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="/">Pagrindinis</a>
                     </li>
                     @auth
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="{{ route('game') }}">Žaidimai</a>
                     </li>
 

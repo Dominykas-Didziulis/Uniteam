@@ -53,7 +53,7 @@
         <p>Seni įmonės darbuotojai taip pat turės galimybę sužinoti apie naujus darbuotojus, pažinti juos viktorinos formatu, padėti įsitraukti į komandą per komandos formavimo žaidimus. Manome, kad tokio pobūdžio užsiemimai padės jums ne tik efektyviai atlikti darbus, tačiau ir lengvai bendrauti tarpusavyje bei suformuoti stiprią ir ilgaamžišką komandą įmonėje.</p>
     </div>
 
-    <footer>
+    <footer class="fixed-bottom">
         <div class="container-fluid padding">
             <div class="text" id="text">
                 <p>©2022 | COVID PAKIRSTI</p>

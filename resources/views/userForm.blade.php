@@ -10,7 +10,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <title>Uniteam</title>
-    <link rel="stylesheet" href="{{ asset('css/registracija.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/profile.css') }}">
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark sticky-top">
@@ -71,8 +71,76 @@
             </div>
         </div>
     </nav>
-
-    <div class="modal-dialog text-center">
+    <form action="/edituserform" method="post">
+    <div class="container-fluid padding" id="container">
+        <div class="row text-center padding">
+            
+                @csrf
+                    <input type="hidden" readonly="readonly" name="id" value="{{$data['id']}}">
+                    <input type="hidden" readonly="readonly" name="user_id" value="{{$data['user_id']}}">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="vardas" >Vardas:</label>
+                        <input type="text" name="vardas" class="form-control" value="{{$data['vardas']}}"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="pavarde" >Pavardė:</label>
+                        <input type="text" name="pavarde" class="form-control" value="{{$data['pavarde']}}"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="el_Pastas">Elektroninis paštas:</label>
+                        <input type="text" name="el_Pastas" class="form-control" value="{{$data['el_Pastas']}}"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="gimimo_Data">Gimimo data:</label>
+                        <input type="text" name="gimimo_Data" class="form-control" value="{{$data['gimimo_Data']}}"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="auto_Marke">Mano vairuojamo automobilio markė:</label>
+                        <input type="text" name="auto_Marke" class="form-control" value="{{$data['auto_Marke']}}"> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="gimimo_Miestas">Miestas kuriame gimiau:</label>
+                        <input type="text" name="gimimo_Miestas" class="form-control" value="{{$data['gimimo_Miestas']}}"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="trys_Zodziai">Trys žodžiai apibūdinantys mane:</label>
+                        <input type="text" name="trys_Zodziai" class="form-control" value="{{$data['trys_Zodziai']}}"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="pomegiai">Mano pomėgiai:</label>
+                        <input type="text" name="pomegiai" class="form-control" value="{{$data['pomegiai']}}"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="kreiptis_Galima">Į mane kreiptis galima dėl:</label>
+                        <input type="text" name="kreiptis_Galima" class="form-control" value="{{$data['kreiptis_Galima']}}"> 
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="muzikos_Zanras">Mano mėgstamiausias muzikos žanras:</label>
+                        <input type="text" name="muzikos_Zanras" class="form-control" value="{{$data['muzikos_Zanras']}}"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="filmas">Mėgstamiausias filmas:</label>
+                        <input type="text" name="filmas" class="form-control" value="{{$data['filmas']}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="didziausia_Baime">Didžiausia baimė yra:</label>
+                        <input type="text" name="didziausia_Baime" class="form-control" value="{{$data['didziausia_Baime']}}"> 
+                    </div>
+                    <div class="form-group">
+                        <label for="salis_Aplankyti">Šalis kurią norėčiau labiausiai aplankyti:</label>
+                        <input type="text" name="salis_Aplankyti" class="form-control" value="{{$data['salis_Aplankyti']}}"> 
+                    </div>
+                    <button type="submit" class="redaguoti float-right"><i class="fas fa-sign-in-alt"></i>Išsaugoti</button>
+                </div>
+        </div>
+    </div>
+    </form>
+    {{-- <div class="modal-dialog text-center">
         <div class="col-sm-8 main-section">
             <div class="modal-content">
                 <form class="col-12" action="/edituserform" method="post">
@@ -135,6 +203,6 @@
                 </form>
             </div>
         </div>
-    </div>
+    </div> --}}
 </body>
 </html>
